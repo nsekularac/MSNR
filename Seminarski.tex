@@ -1,0 +1,145 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper]{article}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[T2A]{fontenc} % enable Cyrillic fonts
+\usepackage[utf8]{inputenc} % make weird characters work
+\usepackage{graphicx}
+\usepackage{physics}
+
+\usepackage[english,serbian]{babel}
+%\usepackage[english,serbianc]{babel} %ukljuciti babel sa ovim opcijama, umesto gornjim, ukoliko se koristi cirilica
+
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+%\newtheorem{primer}{Пример}[section] %ćirilični primer
+\newtheorem{primer}{Primer}[section]
+
+\begin{document}
+
+\title{Kvantno računarstvo 2 (funkcionalni programski jezici za kvantno programiranje)\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
+
+\author{Aleksandar Ćurković, Nemanja Šekularac\\ curkovical@gmail.com, nemanja.sekularac@gmail.com}
+\date{14.~april 2015.}
+\maketitle
+
+\abstract{
+U ovom radu prikazujemo funkcionalne programske jezike za kvantno programiranje, uz kratak osvrt na osnove kvantnog računarstva i funkcionalne programske jezike uopšte.
+Propratni primeri realizovani su u programskom jeziku Quipper.
+
+\tableofcontents
+
+\newpage
+
+\section{Uvod}
+\label{sec:uvod}
+
+\subsection{Kvantno računarstvo}
+\label{sec:kvantnoracunarstvo}
+
+Kvantno računarstvo je oblast istraživanja koja se bavi računarskim sistemima koji u svom radu direktno koriste efekte kvantne mehanike.
+Kvantni efekti, kao što su superpozicija (eng.~\em{superposition}) i kvantna zapletenost (eng. ~\em{quantum entanglement}) se u ovim sistemima, koje nazivamo kvantnim računarima tretiraju kao resurs i koriste za izvršavanje operacija nad podacima.
+
+\subsection{Osnovni pojmovi kvantnog računarstva}
+
+\subsubsection {Kjubit}
+
+Kjubit (eng.~\emph{qubit, quantum bit}) je najmanja jedinica izračunavanja u kvantnom računarstvu.
+
+Kjubit je pandan jednom bitu informacija u klasičnom računarstvu, ali dok se jedan bit može naći u 2 diskretna stanja (0, 1),
+kjubit, na osnovu kvantnog principa superpozicije može istovremeno biti u oba.
+Tačnije, stanje kjubita, u odsustvu merenja, može biti bilo koja linearna kombinacija osnovnih stanja.
+Za osnovna stanja (eng. ~\em base states). kjubita se uzimaju ona koja pri merenju prelaze u stanje 0 ili 1 sa verovatnoćom 1 i obeležavaju se sa $\ket{1}$ i $\ket{0}$
+
+Formalno, stanje kjubita se zapisuje kao $\alpha \ket{0} + \beta \ket{1}$ gde su $\alpha i \beta$ \em{kompleksni} parametri koji označavaju verovatnoću da se nakon merenja (očitavanja stanja) kjubit nađe u jednom od osnovnih stanja sa verovatnoćama, redom, $\alpha^2$ i $\beta^2$ i važi $\alpha^2+\beta^2=1$
+
+Ovo svojstvo ima za posledicu da se 2 kubita mogu naći istovremeno u 4 različita stanja i generalno, n kubita može odjednom biti u $2^n$ različitih stanja.
+
+Skup kjubita uzetih zajedno naziva se kvantni registar. (eng.~\emph{quantum register}).
+
+\subsubsection{Zapletenost, kombinovanje kjubita}
+\label{entanglement}
+
+Efekat kvantne zapletenosti se manifestuje visoko koreliranim stanjima zapletenih čestica nakon merenja.
+To nam omogućava da kombinujemo kjubite na način na koji to nije moguće sa bitovima. Stanje sistema od 2 zapletena kjubita predstavlja se kao linearna kombinacija svih kombinacija osnovnih stanja oba elementa.\\
+
+$\alpha\ket{00} + \beta\ket{01} + \gamma\ket{10} + \delta\ket{11}$\\
+
+pri čemu su $\alpha^2, \beta^2, \gamma^2, \delta,$ redom verovatnoće da će se sistem naći u odgovarajućoj kombinaciji osnovnih stanja gde i dalje važi\\
+
+$\alpha^2+\beta^2+\gamma^2+\delta^2=1$
+
+\subsubsection {Kvantna kapija, operacije nad kjubitima}
+
+Kvantna logička kapija (eng. ~\emph{quantum logic gate}) je kvantni pandan logičkoj kapiji klasičnog računarstva.
+Pokazano je da zbog očuvanja koherencije sistema, sve operacije nad kjubitima i sistemima kjubita moraju biti reverzibilne (eng.~\emph{reversible}) \cite{basics}
+
+Očitavanje stanja predstavlja merenje koje u kvantnoj mehanici dovodi do dekoherencije (eng.~\emph{decoherence}) tj rušenja sistema iz superpozicije u kombinaciju osnovnih stanja i gubitka informacija.\\
+
+Ovo nas dovodi do toga da osnovni oblik kvantnog algoritma uzima formu:\\
+
+1. inicijalizacija stanja --> 2. unitarna operacija --> 3. merenje --> 4. provera rešenja --> 5. ponavljanje\\
+
+Pri tom je operacija 2 proizvod unitarnih operacija od kojih se sastoji naš algoritam.
+
+Treba imati u vidu da kvantni računari dele osobine sa probabilističkim i nedeterminističkim računarima i da tačno rešenje daju samo sa određenom tačnošću.
+
+\subsubsection{Modeli kvantnog računara, Kvantno kolo}
+
+Praktična konstrukcija kvantnog računara je još uvek u domenu laboratorijskih eksperimenata uz tek poneki komercijalni pokušaj.
+Za potrebe kvantnog računarstva, sisteme predstavljamo različitim idealizovanim modelima kao što su npr kvantna Turingova mašina (eng.~\emph{quantum Turing machine, QTM}) ili kvantno kolo (eng. ~\emph{quantum circuit}). 
+
+Kvantno kolo je sekvenca kvantnih kapija kao osnovnih operacija koje vrše transformacije nad jednim ili više kjubita.
+
+\subsection{Funkcionalni programski jezici}
+\label{sec:funkcionalniprgjezici}
+
+\section{Funkcionalni programski jezici za kvantno programiranje}
+\label{sec:funcprl_qp}
+
+
+\subsection{Quantum Lambda Calculus}
+\label{sec:lambdacalc}
+
+
+\subsection{QFC and QPL}
+\label{sec:qfc_qml}
+
+QFC, QPL
+
+\subsection{QML}
+\label{sec:qml}
+
+QML
+
+\subsection{Quipper}
+\label{sec:quipper}
+
+Quipper je funkcionalni programski jezik predstavljen 2013. godine. 
+
+\subsubsection{QRAM Model}
+\subsubsection{Sintaksa}
+\subsubsection{Izvršavanje na klasičnim računarima}
+\label{sec:quipperizvrsavanje}
+
+Quipper je realizovan kao ~\em embedded ~\em language u okviru funkcionalnog jezika Haskell sa dodatnim bibliotekama. Aktuelna distribucija sadrži i simulator kvantnog računara i kod pisan u quipperu se može, uz izvesna ograničenja izvršiti i na klasičnim računarima.
+
+
+\subsection{Primeri}
+
+\section{Zaključak}
+\label{sec:zakljucak}
+
+
+
+
+\addcontentsline{toc}{section}{Literatura}
+\appendix
+\bibliography{seminarski} 
+\bibliographystyle{plain}
+
+
+\end{document}
