@@ -124,18 +124,24 @@ Kvantni računar je zamišljen kao koprocesor povezan sa klasičnim računarom n
 
 Informacije o rezultatu se dobijaju operacijama merenja, oblika "izmeri kjubit q", ova operacija vraća 0 ili 1 klasičnom računaru sa određenim verovatnoćama.
 
-\subsection{Funkcionalni programski jezici}
+\subsection{Funkcionalno programiranje}
 \label{sec:funkcionalniprgjezici}
 
-Funkcionalno programiranje je programska paradigma u kojoj je osnovni način izračunavanja primena funkcija na argumente. Funkcionalni programski jezici su jezici koji podržavaju i ohrabruju primenu funkcionalne paradigme. Tradicionalni programski jezici se baziraju na ideji varijable kao promenljive veze izmedju imena i vrednosti. Ovi jezici se nazivaju imperativni jer se sastoje od niza komandi, koje čine dodele koje menjaju vrednost varijable. Funkcionalni jezici se baziraju na strukturiranim pozivima funkcija. Funkcionalni program se sastoji od poziva funkcije koja može da poziva druge funkcije: 
-    <function1>(<function2>(<function3> ... ) ... ))
+Funkcionalno programiranje je programska paradigma u kojoj je osnovni način izračunavanja primena funkcija na argumente.
+Funkcionalni programski jezici su jezici koji podržavaju i ohrabruju primenu funkcionalne paradigme.
+Tradicionalni programski jezici se baziraju na ideji varijable kao promenljive veze izmedju imena i vrednosti. Ovi jezici se nazivaju 
+imperativni jer se sastoje od niza komandi, koje čine dodele koje menjaju vrednost varijable.
+Funkcionalni jezici se baziraju na strukturiranim pozivima funkcija. Funkcionalni program se sastoji od poziva funkcije koja može da
+poziva druge funkcije:\\
+<function1>(<function2>(<function3> ... ) ... ))
 
-Medju najbitnijim konceptima funkcionalnog programiranja su funkcije višeg reda i odsustvo nus-pojava. 
-Funkcije višeg reda su funkcije koje ili mogu za argumente uzeti druge funkcije ili kao svoj rezultat vraćaju funkciju, čime se omogućavaju ugnježđeni pozivi funkcija, odn. pojava koje se zove kompozicija funkcija.
-Eliminacija nus-pojava podrazumeva otklanjanje svih promena koje ne zavise od pozvane funkcije i njenih argumenata, tako da više poziva jedne funkcije uvek vraća isti rezultat ako su argumenti poziva isti. Eliminacijom nus-pojava olakšava se razumevanje programa i formalna verifikacija a redosled izvršavanja postaje nebitan(ref).
+Medju najbitnijim konceptima funkcionalnog programiranja su funkcije višeg reda i odsustvo nus-pojava. \\
+Funkcije višeg reda su funkcije koje ili mogu za argumente uzeti druge funkcije ili kao svoj rezultat vraćaju funkciju, čime se omogućavaju ugnježdeni pozivi funkcija, odn. pojava koje se zove kompozicija funkcija.\\
+Eliminacija nus-pojava podrazumeva otklanjanje svih promena koje ne zavise od pozvane funkcije i njenih argumenata, tako da više poziva jedne funkcije uvek vraća isti rezultat ako su argumenti poziva isti. Eliminacijom nus-pojava olakšava se razumevanje programa i formalna 
+verifikacija a redosled izvršavanja postaje nebitan(ref).\par
 Prvi i dugo vremena najpopularniji funkcionalni programski jezik je Lisp (LISt Processor) nastao 1958. pod uticajem lamda računa, ali 
 zadržavajući dodelu vrednosti promenljivoj. Glavna struktura podataka u Lisp-u je povezana lista. Prvi čisti funkcionalni jezik 
-(bez dodele vrednosti promenljivoj) je ISWIM. Još neki bitni f. jezici su Erlang, Haskell, ML, Scala, F# itd.
+(bez dodele vrednosti promenljivoj) je ISWIM. Još neki bitni f. jezici su Erlang, Haskell, ML, Scala, F\# itd.
 
 \section{Funkcionalni programski jezici za kvantno programiranje}
 \label{sec:funcprl_qp}
