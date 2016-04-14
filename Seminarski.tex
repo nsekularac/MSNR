@@ -60,7 +60,7 @@ Ovo svojstvo ima za posledicu da se 2 kubita mogu naći istovremeno u 4 različi
 
 Skup kjubita uzetih zajedno naziva se kvantni registar. (eng.~\emph{quantum register}).
 
-\subsubsection{Zapletenost, kombinovanje kjubita}
+\subsubsection{Zapletenost, kombinovanje kjubita, kvantni paralelizam}
 \label{entanglement}
 
 Efekat kvantne zapletenosti se manifestuje visoko koreliranim stanjima zapletenih čestica nakon merenja.
@@ -72,27 +72,57 @@ pri čemu su $\alpha^2, \beta^2, \gamma^2, \delta,$ redom verovatnoće da će se
 
 $\alpha^2+\beta^2+\gamma^2+\delta^2=1$
 
-\subsubsection {Kvantna kapija, operacije nad kjubitima}
+Ovo nam omogućava da, u teoriji, funkcije na kvantnim računarima evaluiramo za više vrednosti \emph{odjednom} tako što vrednosti zadamo u terminima parametara zapletenog sistema. Ovaj efekat, kvantni paralelizam (eng.~\emph{quantum parallelism}) suštinski odvaja kvantno od klasičnog računarstva.
 
-Kvantna logička kapija (eng. ~\emph{quantum logic gate}) je kvantni pandan logičkoj kapiji klasičnog računarstva.
-Pokazano je da zbog očuvanja koherencije sistema, sve operacije nad kjubitima i sistemima kjubita moraju biti reverzibilne (eng.~\emph{reversible}) \cite{basics}
+Nažalost, ovo funkcioniše samo dok je sistem u stanju koherencije  tj dok su superpozicija i spletenost očuvani.
 
-Očitavanje stanja predstavlja merenje koje u kvantnoj mehanici dovodi do dekoherencije (eng.~\emph{decoherence}) tj rušenja sistema iz superpozicije u kombinaciju osnovnih stanja i gubitka informacija.\\
+\subsubsection {Operacije nad kjubitima, kvantne kapije}
 
-Ovo nas dovodi do toga da osnovni oblik kvantnog algoritma uzima formu:\\
+Zbog očuvanja koherencije sistema i informacija u toku izvršenja, sve operacije nad kjubitima i sistemima kjubita moraju biti reverzibilne (eng.~\emph{reversible}).
 
-1. inicijalizacija stanja --> 2. unitarna operacija --> 3. merenje --> 4. provera rešenja --> 5. ponavljanje\\
+Formalno ove operacije predstavljamo unitarnim operatorima nad izabranim prostorom stanja sistema.
 
-Pri tom je operacija 2 proizvod unitarnih operacija od kojih se sastoji naš algoritam.
+Kvantna logička kapija (eng. ~\emph{quantum logic gate}) je kvantni pandan logičkoj kapiji klasičnog računarstva i predstavlja jednu takvu operaciju.
 
-Treba imati u vidu da kvantni računari dele osobine sa probabilističkim i nedeterminističkim računarima i da tačno rešenje daju samo sa određenom tačnošću.
+Posebno su nam, kao i u klasičnom računarstvu, zanimljive male kvantne logičke kapije koje mogu da svojom kombinacijom predstavljaju druge operacije ( ili da ih barem proizvoljno približno aproksimiraju sa konačnim brojem osnovnih kapija). Jedan takav \emph{univerzalni set kapija} su na primer Hadamardova kapija (eng~\emph{Hadamard gate})\\
+\smallskip
+$H\equiv\frac{1}{\sqrt{2}}\begin{pmatrix}
+1&1\\
+-1&1
+\end{pmatrix}$\\
+\smallskip
+koja radi nad jednim kjubitom na sledeći način:\\
+\smallskip
+$\ket{0} \rightarrow \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$\\
+\smallskip
+$\ket{1} \rightarrow \frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$\\
 
-\subsubsection{Modeli kvantnog računara, Kvantno kolo}
+i Toffoli kapija (eng.~\emph{Toffoli gate}) (Toffoli je reverzibilna logička kapija u klasičnom računarstvu i može se predstaviti u kvantnom obliku).
+
+Detaljnije informacije o osnovama kvantnog računarstva mogu se naći npr. u \cite{knjiga}
+
+\subsubsection{Kvantno kolo, Kvantni algoritam, Modeli kvantnog računara}
+\label{modeli}
+
+Kvantno kolo je sekvenca kvantnih kapija kao osnovnih operacija koje vrše transformacije nad jednim ili više kjubita. Samo kvantno kolo predstavlja jednu unitarnu operaciju (kao kombinacija unitarnih operacija/kapija)
+
+Da bi smo kvantno kolo upotrebili za izračunavanje potrebno je sistem na koji je primenjeno najpre inicijalizovati na nek početne vrednosti.
+
+Da bi smo rezultat izračunavanja vratili u klasični računar potrebno nam je merenje. U kvantnoj mehanici merenje je nereverzibilna, destruktivna operacija koja sistem dovodi u stanje dekoherencije.
+
+Takođe merenje je probabilistička operacija (kvantni računari dele osobine sa probabilističkim i nedeterminističkim računarima i rešenje daju samo sa određenom tačnošću).
+
+To dovodi do toga da je opšti upotrebljivi kvantni algoritam niz uzastopnih inicijalizacija, primenjenih kvantnih kola i merenja sa dodatim klasičnim operacijama (npr provere rezultata ili kontrole toka).
 
 Praktična konstrukcija kvantnog računara je još uvek u domenu laboratorijskih eksperimenata uz tek poneki komercijalni pokušaj.
-Za potrebe kvantnog računarstva, sisteme predstavljamo različitim idealizovanim modelima kao što su npr kvantna Turingova mašina (eng.~\emph{quantum Turing machine, QTM}) ili kvantno kolo (eng. ~\emph{quantum circuit}). 
 
-Kvantno kolo je sekvenca kvantnih kapija kao osnovnih operacija koje vrše transformacije nad jednim ili više kjubita.
+Za potrebe kvantnog računarstva, sisteme predstavljamo različitim idealizovanim modelima kao što su npr kvantna Turingova mašina (eng.~\emph{quantum Turing machine, QTM}) ili kvantno kolo (eng. ~\emph{quantum circuit}) dok zanemarujemo prisustvo greške i efekte smetnji (eng.~\emph{interference}) i dekoherencije koji su realnost kvantnih računara.
+
+Neki od opisanih funkcionalnih jezika (Quipper, ?) rade na modelu kvantne memorije sa nasumičnim pristupom (eng.~\emph{Quantum Random Access Memory, Quantum RAM, QRAM} opisan u \cite{qram_model}
+
+Kvantni računar je zamišljen kao koprocesor povezan sa klasičnim računarom na kome se izvršava kontrola toka. Kvantni uređaj sadrži fiksni unapred određeni broj kjubita i sposoban je da ih individualno adresira. Na kvantnom računaru se izvršavaju samo 2 tipa operacija, unitarne operacije i merenja.  Smatra se da je određen broj osnovnih unitarnih operacija realizovan kroz ugrađenje kvantne kapije i da su one oblika "Primeni ugrađenu operaciju na određene kjubite". Ove operacije vraćaju potvrdu kvantnog računara o izvršenju ali ne i bilo kakvu drugu informaciju.
+
+Informacije o rezultatu se dobijaju operacijama merenja, oblika "izmeri kjubit q", ova operacija vraća 0 ili 1 klasičnom računaru sa određenim verovatnoćama.
 
 \subsection{Funkcionalni programski jezici}
 \label{sec:funkcionalniprgjezici}
@@ -118,17 +148,70 @@ QML
 \subsection{Quipper}
 \label{sec:quipper}
 
-Quipper je funkcionalni programski jezik predstavljen 2013. godine. 
+Quipper je skalabilni (eng.~\emph{scalable}), ekspresivni, funkcionalni programski jezik višeg nivoa (eng.~ \emph{higher-order}).
+Prvi put predstavljen 2013. godine u \cite{quipper_language}.
 
-\subsubsection{QRAM Model}
-\subsubsection{Sintaksa}
+\subsubsection{Model}
+
+Quipper kao model kvantnog računara koristi QRAM model kratko opisan u \ref{modeli}, detaljno u \cite{qram_model} 
+
+
+\subsubsection{Odlike jezika}
+
+Prošireni model kola - osim unitarnih kapija/kola quipper obezbeđuje ugrađenu podršku za eksplicitnu inicijalizaciju i prekid (eng.~\emph{termination}), merenja, klasične bitove, klasične kapije i klasično-kontrolisane kvantne kapije 
+
+Pomoćni kjubiti (eng.~\emph{ancilliary qubits, ancillas}) - dopunski ulazi koji su potrebni za neke kvantne algoritme (npr. pretpostavlja se da su u stanju $\ket{0}$ pre i posle izvršenja), eksplicitna inicijalizacija i prekid omogućavaju kontrolu opsega (eng.~\emph{scope})
+
+Prekidanje sa potvrdom (eng.~\emph{assertive termination}) - operacija koja "dealocira" kjubit uz potvrdu da je u stanju $\ket{0}$\\
+
+Mešana klasično/kvantna kola - klasični bitovi, klasične kapije i klasično kontrolisane kvantne kapije se mogu slobodno kombinovati sa čisto kvantnim kapijama.
+
+\subsubsection{Faze izvršenja}
+
+Faza kompilacije\\
+Izvršava se na klasičnom računaru, rezultat je objektni izvršni kod, ulaz je izvorni kod i parametri koji se zadaju u fazi kompilacije (eng.~\emph{compile time parameters}
+
+Faza generisanja kola (eng.~\emph{circuit generation})\\
+Izvršava se na klasičnom računaru u vreme izvršenja koda, ulaz je izvršni kod i parametri kola (eng.~\emph{circuit parameters} (veličine registara, veličine problema, veličina vremenskih koraka, pragovi greške i slično)
+
+Faza izvršenja kola\\
+Izvršava se na kvantnom računaru, ulaz je kvantno kolo generisano u drugoj fazi i ulazni parametri kola (ulazni klasični bitovi (za klasične delove mešanih kola) ili ako fizička implementacija podržava, učitani kjubiti kao ulazi kvantnog kola). Izlaz je izlaz izvršenog kola (klasični bitovi dobijeni merenjem, ako je podržano kjubiti koji treba da budu sačuvani)
+
+Uobičajeni model kvantnog izračunavanja uključuje kombinovanje druge i treće faze, klasični računar snima i obrađuje rezultate izvršenja kola, generiše novo kolo, izvršava ga itd. Quipper takođe podržava opštiji model, da se izlaz jednog kola može koristiti kao parametar za generisanje drugog, pod pretpostavkom da je kvantni deo sistema sposoban da čuva kjubite između izvršenja kola.
+
+\subsubsection{Parametri i ulazi}
+
+Quipper pravi razliku između parametara poznatih pri generisanju kola i parametara poznatih samo pri izvršenju. Ovi poslednji nazivaju se ulazi (eng.~\emph{inputs}). Ova podela je prenesena na tipove u jeziku pa imamo \emph{Bool} - logička promenljiva poznata u fazi generisanja kola i \emph{Bit} - jednobitni logički ulaz u klasično kolo i \emph{Qubit} - 1-kjubitni ulaz u kvantno kolo
+
+Ova razlika se prenosi i na klasične tipove podataka, npr. celobrojne parametre i celobrojne ulaze.
+
+Poseban termin, oblik podataka(eng.~\emph{shape of data}) koristi se za osobine podataka koje se u fazi generisanja kola uzimaju kao parametarske. Na primer, dužina niza je celobrojni parametar koji određuje neku veličinu pri generisanju kola a njegov sadržaj su kjubitni ulazi.
+
+\subsubsection{Jezik za opis kola}
+
+//TODO
+
+
 \subsubsection{Izvršavanje na klasičnim računarima}
 \label{sec:quipperizvrsavanje}
 
-Quipper je realizovan kao ~\em embedded ~\em language u okviru funkcionalnog jezika Haskell sa dodatnim bibliotekama. Aktuelna distribucija sadrži i simulator kvantnog računara i kod pisan u quipperu se može, uz izvesna ograničenja izvršiti i na klasičnim računarima.
-
+Quipper je realizovan kao ~\em embedded ~\em language u okviru funkcionalnog jezika Haskell sa dodatnim bibliotekama. Aktuelna distribucija sadrži i simulator kvantnog računara i kod pisan u quipperu se može, naravno neefikasno, izvršiti i na klasičnim računarima.
 
 \subsection{Primeri}
+
+Primeri u prilogu demonstriraju osnovne osobine jezika Quipper, urađeni su uz pomoć \cite{quipper_programming_intro}.
+
+Uputstvo za pokretanje
+
+\subsubsection{Primer1}
+Opis primera 1
+ime datoteke1
+\subsubsection{Primer2}
+Opis primera 2
+ime datoteke2
+\subsubsection{Primer3}
+Opis primera 3
+ime datoteke3
 
 \section{Zaključak}
 \label{sec:zakljucak}
