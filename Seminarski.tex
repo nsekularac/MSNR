@@ -159,6 +159,7 @@ QFC ( \emph{eng}. Quantum Flow Charts) i QPL ( \emph{eng}. Quantum Programming L
 \subsubsection{Čista i pomešana stanja}
 Spoljni posmatrač može imati nekompletno znanje o stanju sistema. Na primer, pretpostavimo da znamo da dati sistem može biti u stanju ~\emph{u} i stanju ~\emph{v} sa jednakim verovatnoćama. Koristimo sledeću notaciju da to zabeležimo: \( \frac{1}{2} \){~\emph{u}}+\( \frac{1}{2} \){~\emph{v}}. U opštem slučaju, pišemo $\lambda_1${$u_1$}+$\ldots$+$\lambda_m${$u_m$} da opišemo sistem koji je za nekog posmatrača u stanju $u_i$, sa verovatnoćom $\lambda_i$, gde je zbir svih verovatnoća jednak 1. Takva distribucija verovatnoća naziva se \textit{pomešano stanje}. Svaki posmatrač može imati svoje pomešano stanje, dok se stvarno stanje kvantnog sistema nalazi u (moguće nepoznatom) \textit{čistom stanju}.
 
+
 Program se predstavlja u obliku grafikona protoka odn. dijagrama kontrole protoka. Komande deluju tako što ulaz transformišu u izlaz. Zarad jednostavnosti razmatramo samo jedan tip podataka: qbit.
 
 Ako nije drugačije naglašeno, tok podataka se odvija od vrha prema dnu. Svaka grana je označena qbitovima koji su dostupni u tom delu programa dok se u čvorovima odvijaju operacije nad njima. Unitarne transformacije mogu da deluju na jedan ili više qbitova; npr. pišemo \textit{q*=S} za operaciju primene neke kvantne logičke kapije na qbit q. Dakle, notacija je analogna notaciji \textit{b:=1} u klasičnom računarstvu. Operacija merenja je granajuća jer može imati dva moguća izlaza.
