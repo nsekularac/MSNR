@@ -1,0 +1,346 @@
+ % !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper]{report}
+
+\usepackage[T2A]{fontenc} % enable Cyrillic fonts
+\usepackage[utf8x,utf8]{inputenc} % make weird characters work
+\usepackage[serbian]{babel}
+%\usepackage[english,serbianc]{babel}
+\usepackage{amssymb}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[unicode]{hyperref}
+\usepackage{dirtytalk}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\newcommand{\odgovor}[1]{\textcolor{blue}{#1}}
+
+\begin{document}
+
+\title{Kvantno računarstvo 2 (funkcionalni programski
+jezici za kvantno programiranje)\\ \small{Aleksandar Ćurković, Nemanja Šekularac}}
+
+\maketitle
+\tableofcontents
+
+
+\chapter{Uputstva}
+\emph{Prilikom redavanja odgovora na recenziju, obrišite ovo poglavlje.}
+
+Neophodno je odgovoriti na sve zamerke koje su navedene u okviru recenzija. Svaki odgovor pišete u okviru okruženja \verb"\odgovor", \odgovor{kako bi vaši odgovori bili lakše uočljivi.} 
+\begin{enumerate}
+
+\item Odgovor treba da sadrži na koji način ste izmenili rad da bi adresirali problem koji je recenzent naveo. Na primer, to može biti neka dodata rečenica ili dodat pasus. Ukoliko je u pitanju kraći tekst onda ga možete navesti direktno u ovom dokumentu, ukoliko je u pitanju duži tekst, onda navedete samo na kojoj strani i gde tačno se taj novi tekst nalazi. Ukoliko je izmenjeno ime nekog poglavlja, navedite na koji način je izmenjeno, i slično, u zavisnosti od izmena koje ste napravili. 
+
+\item Ukoliko ništa niste izmenili povodom neke zamerke, detaljno obrazložite zašto zahtev recenzenta nije uvažen.
+
+\item Ukoliko ste napravili i neke izmene koje recenzenti nisu tražili, njih navedite u poslednjem poglavlju tj u poglavlju Dodatne izmene.
+\end{enumerate}
+
+Za svakog recenzenta dodajte ocenu od 1 do 5 koja označava koliko vam je recenzija bila korisna, odnosno koliko vam je pomogla da unapredite rad. Ocena 1 označava da vam recenzija nije bila korisna, ocena 5 označava da vam je recenzija bila veoma korisna. 
+
+NAPOMENA: Recenzije ce biti ocenjene nezavisno od vaših ocena. Na osnovu recenzije ja znam da li je ona korisna ili ne, pa na taj način vama idu negativni poeni ukoliko kažete da je korisno nešto što nije korisno. Vašim kolegama šteti da kažete da im je recenzija korisna jer će misliti da su je dobro uradili, iako to zapravo nisu. Isto važi i na drugu stranu, tj nemojte reći da nije korisno ono što jeste korisno. Prema tome, trudite se da budete objektivni. 
+
+\chapter{Prvi recenzent \odgovor{--- ocena: 3} }
+
+\section{O čemu rad govori?}
+Rad govori o osnovnim konceptima kvantnog računarstva. Objašnjava pojmove kao što su kjubit koji počiva na principu superpozicije, kvantni paralelizam, kvantno kolo i model kvantnog računara. Opisane su glavne karakteristike funkcionalnih jezika u kvantnom računarstvu na primeru jezika Quipper koji podržava simulaciju na klasičnom računaru.
+
+\section{Krupne primedbe i sugestije}
+Sažetak bi trebalo da se proširi. Trebalo bi reći neke osnovne karakteristike ili prednosti kvantnog računarstva.
+
+Radu nedostaje sam uvod u rad, kreće se sa uvodom u kvantno računarstvo.
+
+Zaključak bi trebalo da se preradi jer govori o tome šta je urađeno u radu a ne generalno u kvantnom računarstvu i postojećim funkcionalnim programskim jezicima.\\
+\odgovor {Slažemo se s ovom ocenom, tako da smo zaključak dopunili: 
+\say{S obzirom na to da klasični računari koji počivaju na tranzistorima dostižu fizičke granice svog daljnjeg razvitka, kvantni računari u ovom trenutku deluju kao jedan od najvažnijih budućih pravaca razvoja računarstva, uprkos velikim teškoćama na koje taj razvoj nailazi (među najvećima- izolovanost kvantnog računara od spoljnog sveta).}}
+Na mnogim mestima paragrafi sadrže samo jednu rečenicu. Potrebno je restrukturiranje paragrafa u smislenije celine. \\
+
+\section{Sitne primedbe}
+3. strana:\\
+-  Ponavljenje fraze Da bi smo i potrebno restrukturiranje paragrafa. 
+\odgovor {Pomenuta greška je ispravljena.}\\
+7. strana:\\
+- U poglavlju 2.2.3. naslove faza bi trebalo istaći u odnosu na ostatk teksta (npr. bold ili slično)
+
+9. strana:\\
+- greška: ugnežđene umesto ugneždene
+\odgovor {Pomenuta greška je ispravljena.}
+
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+Rad dobro predstavlja osnove kvantnog računarstva i funkcionalne programske jezike na primeru jezika Quipper.
+\item Da li je nešto važno propušteno?\\
+Trebalo da se posveti više pažnje benefitu i prednostima kvantnog računarstva.
+\item Da li ima suštinskih grešaka i propusta?\\
+Nisu primećeni značajniji propusti.
+\item Da li je naslov rada dobro izabran?\\
+Naslov nije formulisan, ostavljen je naslov teme.
+\odgovor {Nije nam ni palo na pamet da naslov rada bude drugačiji od naslova teme, jer je potpuno adekvatan samom radu.}
+\item Da li sažetak sadrži prave podatke o radu?\\
+Sažetak ne sadrži dovoljno informacija.
+\odgovor {Mišljenja smo da sažetak treba da sadrži samu suštinu rada i da ne zalazi u detalje, što i jeste slučaj.}
+\item Da li je rad lak-težak za čitanje?\\
+Prvi deo rada koji se odnosi na kvantno računarstvo je lak za čitanje dok je drugi deo rada koji se odnosi na funkcionalni jezik Quipper teži za čitanje. 
+\odgovor {Trudili smo se da rad bude što jednostavniji, ali da pri tom ne žrtvujemo tačnost podataka koji se navode.}
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+Potrebno je znanje osnovnih koncepata klasičnog računarstva i programskih jezika.
+\item Da li je u radu navedena odgovarajuća literatura?\\
+U radu je navedena odgovarajuća literatura ali za ovakvu temu je potrebno više izvora.
+\odgovor {Namerno smo se ograničili na relativno malo literature jer je u pitanju tema o kojoj postoji dosta spekulacija i izvora koji nisu dovoljno pouzdani.}
+\item Da li su u radu reference korektno navedene?\\
+Navedene reference su korektne ali fale reference u prvom delu rada koji se odnosi na kvantno računarstvo. 
+\item Da li je struktura rada adekvatna?\\
+Osim što radu fali uvod, strukura je adekvatna.
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+Rad ne sadrži tabelu i ne bi trebalo da prelazi 8 strana.
+\odgovor {Dodali smo tabelu, a što se tiče obima, naša je prvobitna ideja bila da ovo bude čisto teorijski rad, jer je vrlo teško napisati nešto smisleno na datu temu u obimu koji bi bio manji od našeg.}
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+Slika je adekvatna i dobrog kvaliteta ali bi trebalo da bude manje veličine, nepotrebno zauzima veći deo strane.
+\odgovor {Veličina slike je smanjena.}
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+
+Veoma sam upućen u oblast.
+
+\chapter{Drugi recenzent \odgovor{--- ocena: } }
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+U radu se govori o kvantnim računarima, sa akcentom na funkcionalne programske jezike za njih. 
+Prvi deo je uvod, vrlo lepo i jednostavno obrađen, a kasnije se govori o 
+funkcionalnim jezicima uopšte kao i za kvantne računare, poput QFC, QPL i Quipper-a. 
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+Tema je veoma zanimljiva, posebno jer se vrši osvrt na funkcionalne jezike, koji su danas manje 
+primenjeni u praksi, i vrlo je fino i korektno obrađena. Nema velikih zamerki.
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+Postoje određene sitne greške u kucanju koje bi trebalo ispraviti (poput kvadarata u odeljku 1.2.2 
+u prvoj formuli). Možda bi samo, radi potpunosti rada, bilo lepo dodati poneki primer, u vidu koda.\\
+\odgovor {Ispravljena greška nedostajućeg kvadrata u pomenutom odeljku; u samom radu nalazi se jedan jednostavan primer, a ostatak nije bio predviđen da se navodi u teorijskom delu.}
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+Da. Uvod je lepo urađen, opisani su fukcionalni jezici, sve je na mestu.
+
+\item Da li je nešto važno propušteno?\\
+Verovatno ne. Mislim da je suština obuhvaćena i sve je objašnjeno lepo i jednostavno.
+
+\item Da li ima suštinskih grešaka i propusta?\\
+Ne, suštinskih. Sitnih propusta uvek ima, ali suština je tu. 
+
+\item Da li je naslov rada dobro izabran?\\
+Da. Naslov je intuitivan, i iz njega se jasno vidi o čemu se govori.
+
+\item Da li sažetak sadrži prave podatke o radu?\\
+Da. Sadrži prave podatke, vrlo jasan i kratak. 
+
+\item Da li je rad lak-težak za čitanje?\\
+Relativno lako. Vidi se da su kolege uspele da približe tematiku čitaocu.
+
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+I da i ne. Predznanje koristi, ali za osnovno upoznavanje, nije potrebno.
+
+\item Da li je u radu navedena odgovarajuća literatura?\\
+Da. Odeljak sa literaturom je izdvojen i lepo odrađen.
+
+\item Da li su u radu reference korektno navedene?\\
+Da. Reference su povezane sa podacima u tekstu gde se koriste.
+
+\item Da li je struktura rada adekvatna?\\
+Da. Jasno je i lako za snalaženje.
+
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+Da, sadrži. Potrebno je samo pogledati rad. 
+
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+Da. Krajnje. Za sve postoji kratko objašnjenje, fino definisano.
+
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+
+Malo sam upućen u ovu tematiku. Prosto, o kvantnim računarima sam čuo tu i tamo, 
+kratko se zaustavim da čujem osnove i onda se bacim na ono što se danas koristi. 
+Kvantni računari možda jesu budućnost ali to je tehnologija koja se tek razvija. 
+
+
+
+\chapter{Treći recenzent \odgovor{--- ocena:} }
+
+\section{O čemu rad govori?}
+Rad govori o kvantnom programiranju, dajući koristan uvod u kvantno računarstvo i funkcionalno programiranje, opisujući efekte kvantne mehanike i njene prednosti pri konstrukciji računara, pojmove i koncepte kvantnog računarstva i osnove funkcionalne paradigme. Rad se zatim fokusira na funkcionalno kvantno programiranje kroz dva opširna primera programskih jezika.
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+
+\section{Krupne primedbe i sugestije}
+Jedina velika zamerka jeste nenavođenje referenci u celom radu, nego samo na nekim mestima. 
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+
+\section{Sitne primedbe}
+U radu postoji nekoliko malih gramatičkih  i štamparskih grešaka, a na više mesta i nepotrebne podele na pasuse. Takođe, bilo bi dobro prilagoditi terminologiju čitaocima i podneblju, kao što je slučaj sa terminima "nus-pojava" (bočni efekat) i "kjubit" (kubit).
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+Da, rad dobro, u odgovarajućem obimu i u skladu sa temom opisuje funkcionalno kvantno programiranje.
+\item Da li je nešto važno propušteno?\\
+Nije propušteno ništa važno.
+\item Da li ima suštinskih grešaka i propusta?\\
+U radu nema suštinskih grešaka.
+\item Da li je naslov rada dobro izabran?\\
+Naslov rada nije dobro izabran jer je to naslov teme, a i pored toga nije prikladan.
+\item Da li sažetak sadrži prave podatke o radu?\\
+Da, sažetak sadrži prave podatke o radu, mada bi mogao biti obimniji.
+\item Da li je rad lak-težak za čitanje?\\
+Rad nije težak za čitanje.
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+Za rad je potrebno osnovno informatičko i solidno matematičko znanje.
+\item Da li je u radu navedena odgovarajuća literatura?\\
+U radu jeste navedena odgovarajuća literatura, ali ne u neophodnom obimu.
+\item Da li su u radu reference korektno navedene?\\
+Neophodno je bolje navođenje referenci u radu, naročito zbog toga što nekim segmentima nedostaju reference.
+\item Da li je struktura rada adekvatna?\\
+Možda bi bilo bolje da se deo obuhvaćen Uvodom podeli u zasebne celine, inače je struktura adekvatna.
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+Rad ne sadrži tabele, ali sadrži slike, a broj strana je veći za jednu.
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+Slika jeste adekvatna, a rad ne sadrži tabele.
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+ %b) veoma upućeni u oblast
+ c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+
+U oblast kvantnog programiranja sam dobro upućen, imajući u vidu da sam je istraživao nedavno, ali u oblast funkcionalnog kvantnog programiranja sam slabije upućen.
+
+
+\chapter{Četvrti recenzent \odgovor{--- ocena:} }
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+U početnim poglavljima autori objašnjavaju šta je kvantno računarstvo kao i koji su izazovi u kvantnom računarstvu. Kasnije, uz kratak pregled postojećih funkcionalnih jezika za kvantne računare, navode osobine o izabranim programskim jezicima.
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+Zaključak priča o budućim revizijama. Taj deo bi trebalo da se izbaci, nema potrebe za pisanjem šta treba da se uradi. 
+
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+\begin{enumerate}
+\item Na 4. strani ceo prvi pasus treba da se sredi.
+Rečenica ``Neki od opisanih funkcionalnih jezika (Quipper, ?)...`` treba da se zamini odgovarajućom.
+Uvođenje novog pojma QRAM nema zatvorenu zagradu.
+
+\item Na više mesta postoje greške u slovima, npr. umesto slova ``đ`` piše ``dj``.
+
+\item U poglavlju 1.3 ostavljeno je mesto za referencu ali referanca nije ubačena.
+
+\item Poglavlje 2 nema tekst, odmah se kreće sa poglavljem 2.1.
+
+\item U poglavlju 2.1 postoji referenca za koju ne postoji tekst??
+
+\item Na strani 6 postoji u tekstu referenca na sliku no ona nije uvezana.
+
+\item Na strani 6 u blizini formule rečenica kreće sa ``Npr., ...``. Mislim da je lepše napisati to ``Na primer, ...``. U istoj rečenici tačku treba staviti pored formule ili je ne stavljati uopšte. Mislim da ne treba da krene novi red sa tačkom.
+
+\item Na strani 6, zbog korišćenja znakova \" za navodnike, umesto ``discard`` dobijena je reč điscard. Koristiti iskošene jednostruke navodnike (pored tastera za 1) za navodnike.
+
+\end{enumerate}
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+Da, autori nisu skrenuli sa teme, obuhvatili su najbitnije detalje.
+
+\item Da li je nešto važno propušteno?\\
+Nije ništa važno propušteno
+
+\item Da li ima suštinskih grešaka i propusta?\\
+Nema. 
+
+\item Da li je naslov rada dobro izabran?\\
+Naslov rada je naziv teme. Ako autori nisu mogli da smisle kreativniji naslov mogli su barem broj ``2`` da izbace. 
+
+\item Da li sažetak sadrži prave podatke o radu?\\
+Da. Sažetak sadrži tačno opisuje ono o čemu autori govore u radu.
+
+\item Da li je rad lak-težak za čitanje?\\
+Rad je lak za čitanje jer su osnovni pojmovi lepo objašnjeni.
+
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+Za čitanje rada nije potrebno predznanje o kvantnom računarstvu. 
+
+\item Da li je u radu navedena odgovarajuća literatura?\\
+Navedena je odgovarajuća literatura.
+
+\item Da li su u radu reference korektno navedene?\\
+Reference su konkretno navedene.
+
+\item Da li je struktura rada adekvatna?\\
+Struktura rada je adekvatna.
+
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+Rad ne sadrži nikakve tabele.
+
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+Slika je na pravmom mestu, lepo opisuje ono što je napisano u tekstu
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+Potpuno neupućen. Za kvantno računarstvo sam čuo u par navratna ranije, no nikada nisam ništa više istraživao o toj grani računarstva.
+
+
+\chapter{Dodatne izmene}
+%Ovde navedite ukoliko ima izmena koje ste uradili a koje vam recenzenti nisu tražili. 
+
+\end{document}
+
+
