@@ -129,13 +129,13 @@ Informacije o rezultatu se dobijaju operacijama merenja, oblika "izmeri kjubit q
 \subsection{Funkcionalno programiranje}
 \label{sec:funkcionalniprgjezici}
 
-Funkcionalno programiranje je programska paradigma u kojoj je osnovni način izračunavanja primena funkcija na argumente.
+Funkcionalno programiranje je programska paradigma u kojoj je osnovni način izračunavanja primena funkcija na argumente.\cite{funcPro}
 Funkcionalni programski jezici su jezici koji podržavaju i ohrabruju primenu funkcionalne paradigme.
 Tradicionalni programski jezici se baziraju na ideji varijable kao promenljive veze između imena i vrednosti. Ovi jezici se nazivaju 
 imperativni jer se sastoje od niza komandi, koje čine dodele koje menjaju vrednost varijable.
 Funkcionalni jezici se baziraju na strukturiranim pozivima funkcija. Funkcionalni program se sastoji od poziva funkcije koja može da
 poziva druge funkcije:\\
-<function1>(<function2>(<function3> ... ) ... ))
+<function1>(<function2>(<function3> ... ) ... ))\cite{funcPro}
 
 Među najbitnijim konceptima funkcionalnog programiranja su funkcije višeg reda i odsustvo nuspojava. \\
 Funkcije višeg reda su funkcije koje ili mogu za argumente uzeti druge funkcije ili kao svoj rezultat vraćaju funkciju, čime se omogućavaju ugnježdeni pozivi funkcija, odn. pojava koje se zove kompozicija funkcija.\\
@@ -151,7 +151,7 @@ zadržavajući dodelu vrednosti promenljivoj. Glavna struktura podataka u Lisp-u
 \subsection{QFC i QPL}\cite{qfc}
 \label{sec:qfc_qml}
 
-QFC ( \emph{eng}. Quantum Flow Charts) i QPL ( \emph{eng}. Quantum Programming Language) su dva blisko povezana jezika čiji je tvorac Peter Selinger.  Pristup programiranju u njima se može sumirati na sledeci način: "kvantni podaci, klasična kontrola". Postoje dva načina sintaksnog predstavljanja kvantnih programa: grafička reprezentacija, u vidu grafikona protoka, i tekstualna. Izbor između te dve sintakse je pitanje ukusa, jer su međusobno ekvivalentne. Dva osnovna načina manipulacije qubit- ovima: unitarne transformacije i merenja. Klasični kontroler komunicira sa kvantnim uređajem šaljući mu niz instrukcija koje kvantni računar zatim izvršava. 
+QFC ( \emph{eng}. Quantum Flow Charts) i QPL ( \emph{eng}. Quantum Programming Language) su dva blisko povezana jezika čiji je tvorac Peter Selinger.  Pristup programiranju u njima se može sumirati na sledeci način: "kvantni podaci, klasična kontrola" \cite[p. 1]{qfc}. Postoje dva načina sintaksnog predstavljanja kvantnih programa: grafička reprezentacija, u vidu grafikona protoka, i tekstualna. Izbor između te dve sintakse je pitanje ukusa, jer su međusobno ekvivalentne. \cite[p. 2]{qfc} Dva osnovna načina manipulacije qubit- ovima: unitarne transformacije i merenja. Klasični kontroler komunicira sa kvantnim uređajem šaljući mu niz instrukcija koje kvantni računar zatim izvršava. 
 
 Spoljni posmatrač može imati nekompletno znanje o stanju sistema. Na primer, pretpostavimo da znamo da dati sistem može biti u stanju ~\emph{u} i stanju ~\emph{v} sa jednakim verovatnoćama. Koristimo sledeću notaciju da to zabeležimo: \( \frac{1}{2} \){~\emph{u}}+\( \frac{1}{2} \){~\emph{v}}. U opštem slučaju, pišemo $\lambda_1${$u_1$}+$\ldots$+$\lambda_m${$u_m$} da opišemo sistem koji je za nekog posmatrača u stanju $u_i$, sa verovatnoćom $\lambda_i$, gde je zbir svih verovatnoća jednak 1. Takva distribucija verovatnoća naziva se \textit{pomešano stanje}. Svaki posmatrač može imati svoje pomešano stanje, dok se stvarno stanje kvantnog sistema nalazi u (moguće nepoznatom) \textit{čistom stanju}.
 
@@ -161,7 +161,7 @@ Ako nije drugačije naglašeno, tok podataka se odvija od vrha prema dnu. Svaka 
 \begin{figure}[H]
 \caption{Primer jednostavnog programa napisanog u QFC}
 \centering
-\includegraphics{qFlow}
+\includegraphics[scale=0.75]{qFlow}
 \end{figure}
 Verovatno najbolje objašnjenje pruža razmotranje jednostavnog primera na slici 1: program prima dva qbita- \textit{p} i \textit{q}, meri p i onda primenjuje logičku kapiju Not na jedan od qbitova u zavisnosti od merenje \textit{p}. Na kraju, na izlazu vraća modifikovane qbitove p i q.
 
@@ -169,14 +169,15 @@ Primetimo da ako su ulazni qbitovi u čistom stanju, oni će to stanje zadržati
 matrica gustine je \[\textit{uu*}= \left( \begin{array}{cc}
 \frac{1}{2} & \frac{-1}{2} \\
 \frac{-1}{2} & \frac{1}{2} \\
-\end{array} \right).\]
-Postoje još neka pravila kao što su: ''new'' koje alocira novu promenljivu i njenu vrednost postavlja na 0, 'discard' koje dealocira promenljivu, 'initial' koje označava početak novog (nedostupnog) toka kontrole i 'permute' koje permutuje promenljive u trenutnom kontekstu promenljivih.
+\end{array} \right).\cite[p.~11]{qfc}\]
+
+Postoje još neka pravila kao što su: ''new'' koje alocira novu promenljivu i njenu vrednost postavlja na 0, ''discard'' koje dealocira promenljivu, ''initial'' koje označava početak novog (nedostupnog) toka kontrole i ''permute'' koje permutuje promenljive u trenutnom kontekstu promenljivih.
 
 QFC podržava petlje (nastaju dodavanjem linije toka kontrole od jedne tačke do druge), procedure (nalik funkcijama u \emph{C}-u imaju ime, tip, ulazne argumente i povratnu vrednost) i rekurziju.
 
 \subsubsection{Implementacioni detalji}
 
-Iako kvantni hardver trenutno ne postoji, korisno je obratiti pažnju na nekoliko hipotetičkih detalja eventualnog hardverskog rešenja. Operativni sistem bi trebao da pamti listu qbitova koje koristi svaki od procesa. Kada proces zatraži novi qbit, operativni sistem nalazi slobodan qbit koji mu dodeljuje. Naravno, operativni sistem mora da vodi računa o tome da proces ne može da pristupi qbitu koji mu nije dodeljen, što veoma liči na upravljanje memorijom na klasičnim računarima. Kada proces završi rad sa nekim qbitom obaveštava o tome operativni sistem koji dati qbit označava kao slobodan.
+Iako kvantni hardver trenutno ne postoji, korisno je obratiti pažnju na nekoliko hipotetičkih detalja eventualnog hardverskog rešenja. Operativni sistem bi trebao da pamti listu qbitova koje koristi svaki od procesa. Kada proces zatraži novi qbit, operativni sistem nalazi slobodan qbit koji mu dodeljuje. Naravno, operativni sistem mora da vodi računa o tome da proces ne može da pristupi qbitu koji mu nije dodeljen, što veoma liči na upravljanje memorijom na klasičnim računarima. Kada proces završi rad sa nekim qbitom obaveštava o tome operativni sistem koji dati qbit označava kao slobodan.\cite[p. 21]{qfc}
 
 Po \textit{svojstvu nekloniranja} nije moguće duplicirati kvantni bit. U ovom jeziku, koji je statično tipiziran, ta teorema je ispoštovana u samoj sintaksi, što predstavlja napredak u odnosu na ranije formalizme koji nisu imali to svojstvo, što bi kasnije dovelo do grešaka u radu (npr. prilikom primene unitarne transformacije na više kopija istog qbita).
 
@@ -197,19 +198,19 @@ Prošireni model kola - osim unitarnih kapija/kola quipper obezbeđuje ugrađenu
 
 Pomoćni kjubiti (eng.~\emph{ancilliary qubits, ancillas}) - dopunski ulazi koji su potrebni za neke kvantne algoritme (npr. pretpostavlja se da su u stanju $\ket{0}$ pre i posle izvršenja), eksplicitna inicijalizacija i prekid omogućavaju kontrolu opsega (eng.~\emph{scope})
 
-Prekidanje sa potvrdom (eng.~\emph{assertive termination}) - operacija koja "dealocira" kjubit uz potvrdu da je u stanju $\ket{0}$\\
+Prekidanje sa potvrdom (eng.~\emph{assertive termination}) - operacija koja ''dealocira'' kjubit uz potvrdu da je u stanju $\ket{0}$\\
 
 Mešana klasično/kvantna kola - klasični bitovi, klasične kapije i klasično kontrolisane kvantne kapije se mogu slobodno kombinovati sa čisto kvantnim kapijama.
 
 \subsubsection{Faze izvršenja}
 
-Faza kompilacije\\
+\textbf{Faza kompilacije}\\
 Izvršava se na klasičnom računaru, rezultat je objektni izvršni kod, ulaz je izvorni kod i parametri koji se zadaju u fazi kompilacije (eng.~\emph{compile time parameters}
 
-Faza generisanja kola (eng.~\emph{circuit generation})\\
+\textbf{Faza generisanja kola} (eng.~\emph{circuit generation})\\
 Izvršava se na klasičnom računaru u vreme izvršenja koda, ulaz je izvršni kod i parametri kola (eng.~\emph{circuit parameters} (veličine registara, veličine problema, veličina vremenskih koraka, pragovi greške i slično)
 
-Faza izvršenja kola\\
+\textbf{Faza izvršenja kola}\\
 Izvršava se na kvantnom računaru, ulaz je kvantno kolo generisano u drugoj fazi i ulazni parametri kola (ulazni klasični bitovi (za klasične delove mešanih kola) ili ako fizička implementacija podržava, učitani kjubiti kao ulazi kvantnog kola). Izlaz je izlaz izvršenog kola (klasični bitovi dobijeni merenjem, ako je podržano kjubiti koji treba da budu sačuvani)
 
 Uobičajeni model kvantnog izračunavanja uključuje kombinovanje druge i treće faze, klasični računar snima i obrađuje rezultate izvršenja kola, generiše novo kolo, izvršava ga itd. Quipper takođe podržava opštiji model, da se izlaz jednog kola može koristiti kao parametar za generisanje drugog, pod pretpostavkom da je kvantni deo sistema sposoban da čuva kjubite između izvršenja kola.
@@ -222,6 +223,7 @@ Ova razlika se prenosi i na klasične tipove podataka, npr. celobrojne parametre
 
 Poseban termin, oblik podataka(eng.~\emph{shape of data}) koristi se za osobine podataka koje se u fazi generisanja kola uzimaju kao parametarske. Na primer, dužina niza je celobrojni parametar koji određuje neku veličinu pri generisanju kola a njegov sadržaj su kjubitni ulazi.
 
+\pagebreak
 \subsubsection{Quipper kao jezik za opis kola}
 
 Proceduralna paradigma jezika pruža podršku za programiranje sa kjubitima kao varijablama i kapijama koje se primenjuju na njih jedna po jedna, uz grupisanje operacija u podprograme. Kvantne operacije su tako, predstavljene kao funkcije koje uzimaju kvantne podatke na ulazu i daju njihovo izmenjeno stanje na izlazu.
@@ -240,7 +242,8 @@ box
 
 Quipper je realizovan kao ~\em embedded ~\em language u okviru funkcionalnog jezika Haskell sa dodatnim bibliotekama. Aktuelna distribucija sadrži i simulator kvantnog računara i kod pisan u quipperu se može, naravno neefikasno, izvršiti i na klasičnim računarima.
 
-U Quipperu, isti opis kvantnog kola se može koristiti za konstrukciju i manipulaciju u memoriji ili za njegovo izvršenje. Na primer, funkcija \begin{verbatim} run_generic \end{verbatim} simulira kolo dok funkcija \begin{verbatim} print_generic \end{verbatim} štampa kolo u nekom od izlaznih formata.
+U Quipperu, isti opis kvantnog kola se može koristiti za konstrukciju i manipulaciju u memoriji ili za njegovo izvršenje. Na primer, funkcija \begin{verbatim} print_generic \end{verbatim} štampa kolo u nekom od izlaznih formata. Jednostavan program u propratnoj datoteci ''primer1.hs'' demonstrira prikaz konstruisanog kola u pdf formatu.\\
+Funkcija \begin{verbatim} run_generic \end{verbatim} simulira konstruisano.
 
 \section{Zaključak}
 \label{sec:zakljucak}
@@ -256,6 +259,6 @@ U Quipperu, isti opis kvantnog kola se može koristiti za konstrukciju i manipul
 \bibliography{seminarski} 
 \bibliographystyle{plain}
 
-TeX source ovog dokumenta dostupan na \url{https://github.com/nsekularac/MSNR}
+TeX source ovog dokumenta i propratne datoteke su dostupne na \url{https://github.com/nsekularac/MSNR}
 
 \end{document}
