@@ -21,7 +21,7 @@
 
 \begin{document}
 
-\title{Kvantno računarstvo 2 (funkcionalni programski jezici za kvantno programiranje)\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
+\title{Uvod u kvantno računarstvo sa osvrtom na funkcionalne programske jezike za kvantno programiranje\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
 
 \author{Aleksandar Ćurković, Nemanja Šekularac\\ curkovical@gmail.com, nemanja.sekularac@gmail.com}
 \date{14.~april 2015.}
@@ -69,7 +69,7 @@ To nam omogućava da kombinujemo kjubite na način na koji to nije moguće sa bi
 
 $\alpha\ket{00} + \beta\ket{01} + \gamma\ket{10} + \delta\ket{11}$\\
 
-pri čemu su $\alpha^2, \beta^2, \gamma^2, \delta,$ redom verovatnoće da će se sistem naći u odgovarajućoj kombinaciji osnovnih stanja gde i dalje važi\\
+pri čemu su $\alpha^2, \beta^2, \gamma^2, \delta^2,$ redom verovatnoće da će se sistem naći u odgovarajućoj kombinaciji osnovnih stanja gde i dalje važi\\
 
 $\alpha^2+\beta^2+\gamma^2+\delta^2=1$
 
@@ -107,7 +107,7 @@ Detaljnije informacije o osnovama kvantnog računarstva mogu se naći npr. u \ci
 
 Kvantno kolo je sekvenca kvantnih kapija kao osnovnih operacija koje vrše transformacije nad jednim ili više kjubita. Samo kvantno kolo predstavlja jednu unitarnu operaciju (kao kombinacija unitarnih operacija/kapija)
 
-Da bi smo kvantno kolo upotrebili za izračunavanje potrebno je sistem na koji je primenjeno najpre inicijalizovati na nek početne vrednosti.
+Da bismo kvantno kolo upotrebili za izračunavanje potrebno je sistem na koji je primenjeno najpre inicijalizovati na nek početne vrednosti.
 
 Da bi smo rezultat izračunavanja vratili u klasični računar potrebno nam je merenje. U kvantnoj mehanici merenje je nereverzibilna, destruktivna operacija koja sistem dovodi u stanje dekoherencije.
 
@@ -130,15 +130,15 @@ Informacije o rezultatu se dobijaju operacijama merenja, oblika "izmeri kjubit q
 
 Funkcionalno programiranje je programska paradigma u kojoj je osnovni način izračunavanja primena funkcija na argumente.
 Funkcionalni programski jezici su jezici koji podržavaju i ohrabruju primenu funkcionalne paradigme.
-Tradicionalni programski jezici se baziraju na ideji varijable kao promenljive veze izmedju imena i vrednosti. Ovi jezici se nazivaju 
+Tradicionalni programski jezici se baziraju na ideji varijable kao promenljive veze između imena i vrednosti. Ovi jezici se nazivaju 
 imperativni jer se sastoje od niza komandi, koje čine dodele koje menjaju vrednost varijable.
 Funkcionalni jezici se baziraju na strukturiranim pozivima funkcija. Funkcionalni program se sastoji od poziva funkcije koja može da
 poziva druge funkcije:\\
 <function1>(<function2>(<function3> ... ) ... ))
 
-Medju najbitnijim konceptima funkcionalnog programiranja su funkcije višeg reda i odsustvo nus-pojava. \\
+Među najbitnijim konceptima funkcionalnog programiranja su funkcije višeg reda i odsustvo nuspojava. \\
 Funkcije višeg reda su funkcije koje ili mogu za argumente uzeti druge funkcije ili kao svoj rezultat vraćaju funkciju, čime se omogućavaju ugnježdeni pozivi funkcija, odn. pojava koje se zove kompozicija funkcija.\\
-Eliminacija nus-pojava podrazumeva otklanjanje svih promena koje ne zavise od pozvane funkcije i njenih argumenata, tako da više poziva jedne funkcije uvek vraća isti rezultat ako su argumenti poziva isti. Eliminacijom nus-pojava olakšava se razumevanje programa i formalna 
+Eliminacija nuspojava podrazumeva otklanjanje svih promena koje ne zavise od pozvane funkcije i njenih argumenata, tako da više poziva jedne funkcije uvek vraća isti rezultat ako su argumenti poziva isti. Eliminacijom nuspojava olakšava se razumevanje programa i formalna 
 verifikacija a redosled izvršavanja postaje nebitan(ref).\par
 Prvi i dugo vremena najpopularniji funkcionalni programski jezik je Lisp (LISt Processor) nastao 1958. pod uticajem lamda računa, ali 
 zadržavajući dodelu vrednosti promenljivoj. Glavna struktura podataka u Lisp-u je povezana lista. Prvi čisti funkcionalni jezik 
@@ -147,7 +147,7 @@ zadržavajući dodelu vrednosti promenljivoj. Glavna struktura podataka u Lisp-u
 \section{Funkcionalni programski jezici za kvantno programiranje}
 \label{sec:funcprl_qp}
 
-\subsection{QFC i QPL}
+\subsection{QFC i QPL}\cite{qfc}
 \label{sec:qfc_qml}
 
 QFC ( \emph{eng}. Quantum Flow Charts) i QPL ( \emph{eng}. Quantum Programming Language) su dva blisko povezana jezika čiji je tvorac Peter Selinger.  Pristup programiranju u njima se može sumirati na sledeci način: "kvantni podaci, klasična kontrola". Postoje dva načina sintaksnog predstavljanja kvantnih programa: grafička reprezentacija, u vidu grafikona protoka, i tekstualna. Izbor između te dve sintakse je pitanje ukusa, jer su međusobno ekvivalentne. Dva osnovna načina manipulacije qubit- ovima: unitarne transformacije i merenja. Klasični kontroler komunicira sa kvantnim uređajem šaljući mu niz instrukcija koje kvantni računar zatim izvršava. 
@@ -158,15 +158,15 @@ Spoljni posmatrač može imati nekompletno znanje o stanju sistema. Na primer, p
 Program se predstavlja u obliku grafikona protoka odn. dijagrama kontrole protoka. Komande deluju tako što ulaz transformišu u izlaz. Zarad jednostavnosti razmatramo samo jedan tip podataka: qbit.
 
 Ako nije drugačije naglašeno, tok podataka se odvija od vrha prema dnu. Svaka grana je označena qbitovima koji su dostupni u tom delu programa dok se u čvorovima odvijaju operacije nad njima. Unitarne transformacije mogu da deluju na jedan ili više qbitova; npr. pišemo \textit{q*=S} za operaciju primene neke kvantne logičke kapije na qbit q. Dakle, notacija je analogna notaciji \textit{b:=1} u klasičnom računarstvu. Operacija merenja je granajuća jer može imati dva moguća izlaza.
-\includegraphics{qFlow}
-Verovatno najbolje objašnjenje pruža razmotranje jednostavnog primera na slici: program prima dva qbita- \textit{p} i \textit{q}, meri p i onda primenjuje logičku kapiju Not na jedan od qbitova u zavisnosti od merenje \textit{p}. Na kraju, na izlazu vraća modifikovane qbitove p i q.
+%\includegraphics{qFlow}
+Verovatno najbolje objašnjenje pruža razmotranje jednostavnog primera na slici 1: program prima dva qbita- \textit{p} i \textit{q}, meri p i onda primenjuje logičku kapiju Not na jedan od qbitova u zavisnosti od merenje \textit{p}. Na kraju, na izlazu vraća modifikovane qbitove p i q.
 
-Primetimo da ako su ulazni qbitovi u čistom stanju, oni će to stanje zadržati posle svake unitarne transformacije i operacije merenja. Trenutak kada se to stanje menja je prilikom spajanja dve grane na dijagramu, tako da na izlazu (u ovom slučaju) dobijamo qbitove u pomešanom stanju. Ali i sam ulaz u program mogu biti qbitovi u pomešanom stanju u kom slučaju se logičke kapije primenjuju na matrice gustine koje predstavljaju pomešana stanja. Dok se čisto stanje može predstaviti u obliku matrice sa jednom kolonom, matrica gustine jednog kubita je dimenzije 2$\times$2. Npr., za qbit \textit{u}=$\frac{1}{\sqrt{2}}\ket{0}$-\textit{u}=$\frac{1}{\sqrt{2}}\ket{0}$ 
+Primetimo da ako su ulazni qbitovi u čistom stanju, oni će to stanje zadržati posle svake unitarne transformacije i operacije merenja. Trenutak kada se to stanje menja je prilikom spajanja dve grane na dijagramu, tako da na izlazu (u ovom slučaju) dobijamo qbitove u pomešanom stanju. Ali i sam ulaz u program mogu biti qbitovi u pomešanom stanju u kom slučaju se logičke kapije primenjuju na matrice gustine koje predstavljaju pomešana stanja. Dok se čisto stanje može predstaviti u obliku matrice sa jednom kolonom, matrica gustine jednog kubita je dimenzije 2$\times$2. Npr., za qbit \textit{u}=$\frac{1}{\sqrt{2}}\ket{0}$ - $\frac{1}{\sqrt{2}}\ket{0}$ 
 matrica gustine je \[\textit{uu*}= \left( \begin{array}{cc}
 \frac{1}{2} & \frac{-1}{2} \\
 \frac{-1}{2} & \frac{1}{2} \\
-\end{array} \right)\].
-Postoje još neka pravila kao što su: "new" koje alocira novu promenljivu i njenu vrednost postavlja na 0, "discard" koje dealocira promenljivu, "initial" koje označava početak novog (nedostupnog) toka kontrole i "permute" koje permutuje promenljive u trenutnom kontekstu promenljivih.
+\end{array} \right).\]
+Postoje još neka pravila kao što su: 'new' koje alocira novu promenljivu i njenu vrednost postavlja na 0, 'discard' koje dealocira promenljivu, 'initial' koje označava početak novog (nedostupnog) toka kontrole i 'permute' koje permutuje promenljive u trenutnom kontekstu promenljivih.
 
 QFC podržava petlje (nastaju dodavanjem linije toka kontrole od jedne tačke do druge), procedure (nalik funkcijama u \emph{C}-u imaju ime, tip, ulazne argumente i povratnu vrednost) i rekurziju.
 
@@ -228,7 +228,7 @@ Na primer, operatori \begin{verbatim} with_control i with_ancilla \end{verbatim}
 
 Zbog mogućnosti da kvantna kola u budu ogromna (\cite{quipper_language} navodi 5 \emph{triliona} kvantnih kapija) Quipper omogućava ''pakovanje''(eng.~\emph{boxing}) često korišćenih kola putem \begin{verbatim}
 box
-\end{verbatim} operatora koji uzima ime i funkciju koja generiše kolo kao ulaz. Ovako ''spakovane'' funkcije mogu biti i ugnežđene (eng.~\emph{nested}).
+\end{verbatim} operatora koji uzima ime i funkciju koja generiše kolo kao ulaz. Ovako ''spakovane'' funkcije mogu biti i ugneždene (eng.~\emph{nested}).
 
 
 \subsubsection{Izvršavanje na klasičnim računarima}
@@ -240,8 +240,7 @@ U Quipperu, isti opis kvantnog kola se može koristiti za konstrukciju i manipul
 
 \section{Zaključak}
 
- U ovom kratkom radu pokusali smo da sto jednostavnije i sažetije predstavimo sam koncept kvantnog funkcionalnog programiranja i neke jezike koji se time bave, a zbog obima rada, nismo mogli da se pozabavimo još nekim kvantnim funkcionalnim jezicima kao što su Quantum lambda calculi i QML. 
-Za buduće revizije ostaje realizacija nekih primera upotrebe ovih jezika kako bi demonstrirali njihovu upotrebljivost.
+ U ovom kratkom radu pokusali smo da sto jednostavnije i sažetije predstavimo sam koncept kvantnog funkcionalnog programiranja i neke jezike koji se time bave, a zbog obima rada, nismo mogli da se pozabavimo još nekim kvantnim funkcionalnim jezicima kao što su Quantum lambda calculi i QML. S obzirom na to da klasični računari koji počivaju na tranzistorima dostižu fizičke granice svog daljnjeg razvitka, kvantni računari u ovom trenutku deluju kao jedan od najvažnijih budućih pravaca razvoja računarstva, uprkos velikim teškoćama na koje taj razvoj nailazi (među najvećima- izolovanost kvantnog računara od spoljnog sveta).
 
 \label{sec:zakljucak}
 
