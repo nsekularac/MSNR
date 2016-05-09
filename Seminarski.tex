@@ -72,7 +72,9 @@ $\alpha\ket{00} + \beta\ket{01} + \gamma\ket{10} + \delta\ket{11}$\\
 
 pri čemu su $\alpha^2, \beta^2, \gamma^2, \delta^2,$ redom verovatnoće da će se sistem naći u odgovarajućoj kombinaciji osnovnih stanja gde i dalje važi\\
 
-$\alpha^2+\beta^2+\gamma^2+\delta^2=1$
+$\alpha^2+\beta^2+\gamma^2+\delta^2=1$.\\
+
+Ovakva distribucija verovatnoća naziva se \textit{pomešano stanje}\cite{qfc}. Svaki posmatrač može imati svoje pomešano (nekompletno) stanje, dok se stvarno stanje kvantnog sistema nalazi u (moguće nepoznatom) \textit{čistom stanju}.
 
 Ovo nam omogućava da, u teoriji, funkcije na kvantnim računarima evaluiramo za više vrednosti \emph{odjednom} tako što vrednosti zadamo u terminima parametara zapletenog sistema. Ovaj efekat, kvantni paralelizam (eng.~\emph{quantum parallelism}) suštinski odvaja kvantno od klasičnog računarstva.
 
@@ -143,21 +145,18 @@ Eliminacija nuspojava podrazumeva otklanjanje svih promena koje ne zavise od poz
 verifikacija a redosled izvršavanja postaje nebitan.\par
 Prvi i dugo vremena najpopularniji funkcionalni programski jezik je Lisp (LISt Processor) nastao 1958. pod uticajem lamda računa, ali 
 zadržavajući dodelu vrednosti promenljivoj. Glavna struktura podataka u Lisp-u je povezana lista. Prvi čisti funkcionalni jezik 
-(bez dodele vrednosti promenljivoj) je ISWIM. Još neki bitni f. jezici su Erlang, Haskell, ML, Scala, F\# itd.
+(bez dodele vrednosti promenljivoj) je ISWIM. Još neki bitni funkcionalni jezici su Erlang, Haskell, ML, Scala, F\# itd.
 
 \section{Funkcionalni programski jezici za kvantno programiranje}
 \label{sec:funcprl_qp}
+Kvantni funkcionalni jezici zasnivaju se na konceptu lambda računa. Lambda račun je formalni sistem u matematičkoj logici koji se koristi za ispitivanje svojstava funkcija, kao što su izračunljivost, rekurzija i zaustavljanje.\cite{survey} Među ove jezike spadaju: QFC, QML, Quantum lambda calculi i Quipper, od kojih ćemo malo detaljnije obraditi QFC (QPL) i Quipper.
 
 \subsection{QFC i QPL}
 \label{sec:qfc_qml}
 
 QFC ( \emph{eng}. Quantum Flow Charts) i QPL ( \emph{eng}. Quantum Programming Language) su dva blisko povezana jezika čiji je tvorac Peter Selinger.  Pristup programiranju u njima se može sumirati na sledeci način: ''kvantni podaci, klasična kontrola'' \cite[p. 1]{qfc}. Postoje dva načina sintaksnog predstavljanja kvantnih programa: grafička reprezentacija, u vidu grafikona protoka, i tekstualna. Izbor između te dve sintakse je pitanje ukusa, jer su međusobno ekvivalentne. \cite[p. 2]{qfc} Dva osnovna načina manipulacije kubitovima: unitarne transformacije i merenja. Klasični kontroler komunicira sa kvantnim uređajem šaljući mu niz instrukcija koje kvantni računar zatim izvršava. 
 
-Spoljni posmatrač može imati nekompletno znanje o stanju sistema. Na primer, pretpostavimo da znamo da dati sistem može biti u stanju ~\emph{u} i stanju ~\emph{v} sa jednakim verovatnoćama. Koristimo sledeću notaciju da to zabeležimo: \( \frac{1}{2} \){~\emph{u}}+\( \frac{1}{2} \){~\emph{v}}. U opštem slučaju, pišemo $\lambda_1${$u_1$}+$\ldots$+$\lambda_m${$u_m$} da opišemo sistem koji je za nekog posmatrača u stanju $u_i$, sa verovatnoćom $\lambda_i$, gde je zbir svih verovatnoća jednak 1. Takva distribucija verovatnoća naziva se \textit{pomešano stanje}. Svaki posmatrač može imati svoje pomešano stanje, dok se stvarno stanje kvantnog sistema nalazi u (moguće nepoznatom) \textit{čistom stanju}.
-
-Program se predstavlja u obliku grafikona protoka odn. dijagrama kontrole protoka. Komande deluju tako što ulaz transformišu u izlaz. Zarad jednostavnosti razmatramo samo jedan tip podataka: kubit.
-
-Ako nije drugačije naglašeno, tok podataka se odvija od vrha prema dnu. Svaka grana je označena kubitovima koji su dostupni u tom delu programa dok se u čvorovima odvijaju operacije nad njima. Unitarne transformacije mogu da deluju na jedan ili više kubitova; npr. pišemo \textit{q*=S} za operaciju primene neke kvantne logičke kapije na kubit q. Dakle, notacija je analogna notaciji \textit{b:=1} u klasičnom računarstvu. Operacija merenja je granajuća jer može imati dva moguća izlaza.
+Program se predstavlja u obliku grafikona protoka odn. dijagrama kontrole protoka. Komande deluju tako što ulaz transformišu u izlaz. Zarad jednostavnosti razmatramo samo jedan tip podataka: kubit. Ako nije drugačije naglašeno, tok podataka se odvija od vrha prema dnu. Svaka grana je označena kubitovima koji su dostupni u tom delu programa dok se u čvorovima odvijaju operacije nad njima. Unitarne transformacije mogu da deluju na jedan ili više kubitova; npr. pišemo \textit{q*=S} za operaciju primene neke kvantne logičke kapije na kubit q. Dakle, notacija je analogna notaciji \textit{b:=1} u klasičnom računarstvu. Operacija merenja je granajuća jer može imati dva moguća izlaza.
 \begin{figure}[H]
 \caption{Primer jednostavnog programa napisanog u QFC} \label{fig:qfcPrimer}
 \centering
