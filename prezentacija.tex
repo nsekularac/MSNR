@@ -1,0 +1,205 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\usepackage[utf8x,utf8]{inputenc} % make weird characters work
+\usepackage[serbian]{babel}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Short title]{Uvod u kvantno računarstvo sa osvrtom na funkcionalne programske jezike za kvantno programiranje} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Aleksandar Ćurković, Nemanja Šekularac} % Your name
+\institute % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Matematički fakultet \\ % Your institution for the title page
+\medskip
+\textit{nsekularac@gmail.com, curkovical@gmail.com} % Your email address
+}
+\date{11. maj 2016} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Pregled} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Uvod} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+\subsection{Kvantno računarstvo}% A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+\subsection{Funkcionalno programiranje}
+
+\begin{frame}
+\frametitle{Kvantno računarstvo}
+\begin{itemize}
+\item{Kvantni efekti}
+	\begin{itemize}
+    \item{superpozicija}\\
+	kubit postoji u oba stanja istovremeno, pre merenja
+    \item{spletenost}\\
+	rezultat merenja jednog kubita determiniše rezultat merenja drugog kubita, bez obzira na njihovu udaljenost
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Kvantno računarstvo}
+\begin{itemize}
+\item 
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Funkcionalno programiranje}
+\begin{itemize}
+\item{Programska paradigma u kojoj je osnovni način izračunavanja primena funkcija na argumente}
+\item{Funkcije višeg reda}
+    \begin{itemize}
+    \item{za argumente uzimaju druge funkcije ili kao svoj rezultat vraćaju funkciju }
+    \end{itemize}
+\item{Odsustvo nuspojava}
+  	\begin{itemize}
+	\item{više poziva iste funkcije uvek vraća isti rezultat za iste argumente poziva}
+  	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\section{QFC}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{QFC (Quantum Flow Charts)}
+\begin{itemize}
+\item{QPL(Quantum Programming Language)}
+	\begin{itemize}
+	\item{ekvivalentan QFC-u}
+    \item{umesto grafičke tekstualna reprezentacija}
+	\end{itemize}
+\item{''kvantni podaci, klasična kontrola''}\cite{p1}
+\item{program se predstavlja u obliku grafikona protoka}
+\item{podržava petlje, rekurziju i procedure, kao i strukture podataka kao što su liste i drveta}
+\item{svaka grana obeležena dostupnim kubitovima, čvorovi označavaju operacije}
+\item{dodatna pravila: new, discard, initial i permute}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Quipper}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Reference}
+\footnotesize{
+\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+\bibitem[Selinger, 2004]{p1} Peter Selinger (2004)
+\newblock Towards a Quantum Programming Language
+
+\end{thebibliography}
+}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
