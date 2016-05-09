@@ -30,7 +30,7 @@
 
 \abstract{
 U ovom radu prikazujemo funkcionalne programske jezike za kvantno programiranje, uz kratak osvrt na osnove kvantnog računarstva i funkcionalne programske jezike uopšte.
-Propratni primeri realizovani su u programskom jeziku Quipper.
+Propratni primer realizovan je u programskom jeziku Quipper.
 
 \tableofcontents
 
@@ -47,20 +47,20 @@ Kvantni efekti, kao što su superpozicija (eng.~\em{superposition}) i kvantna za
 
 \subsection{Osnovni pojmovi kvantnog računarstva}
 
+Za razumevanje kvantnog računarstva potrebni su nam osnovni pojmovi od kojih neki kao što su kubit (eng.~\emph{qubit, quantum bit}) ili kvantna kapija (eng. ~\emph{quantum logic gate}) imaju svoje pandane i u klasičnom računarstvu. 
+
 \subsubsection {Kubit}
 
-Kubit (eng.~\emph{qubit, quantum bit}) je najmanja jedinica izračunavanja u kvantnom računarstvu.
-
-Kubit je pandan jednom bitu informacija u klasičnom računarstvu, ali dok se jedan bit može naći u 2 diskretna stanja (0, 1),
-kubit, na osnovu kvantnog principa superpozicije može istovremeno biti u oba.
+Kubit je najmanja jedinica izračunavanja u kvantnom računarstvu. Pandan je jednom bitu informacija u klasičnom računarstvu, ali dok se jedan bit može naći u 2 diskretna stanja (0, 1),
+kubit, na osnovu kvantnog principa superpozicije može istovremeno biti u više stanja.
 Tačnije, stanje kubita, u odsustvu merenja, može biti bilo koja linearna kombinacija osnovnih stanja.
-Za osnovna stanja (eng. ~\em base states) kubita se uzimaju ona koja pri merenju prelaze u stanje 0 ili 1 sa verovatnoćom 1 i obeležavaju se sa $\ket{1}$ i $\ket{0}$
+Za osnovna stanja (eng. ~\em base states) kubita se uzimaju ona koja pri merenju prelaze u stanje 0 ili 1 sa verovatnoćom 1 i obeležavaju se sa $\ket{1}$ i $\ket{0}$.
 
-Formalno, stanje kubita se zapisuje kao $\alpha \ket{0} + \beta \ket{1}$ gde su $\alpha i \beta$ \em{kompleksni} parametri koji označavaju verovatnoću da se nakon merenja (očitavanja stanja) kubit nađe u jednom od osnovnih stanja sa verovatnoćama, redom, $\alpha^2$ i $\beta^2$ i važi $\alpha^2+\beta^2=1$
+Formalno, stanje kubita se zapisuje kao $\alpha \ket{0} + \beta \ket{1}$ gde su $\alpha$ i $\beta$ \em{kompleksni} parametri koji označavaju verovatnoću da se nakon merenja (očitavanja stanja) kubit nađe u jednom od osnovnih stanja sa verovatnoćama, redom, $\alpha^2$ i $\beta^2$ i važi $\alpha^2+\beta^2=1$.
 
 Ovo svojstvo ima za posledicu da se 2 kubita mogu naći istovremeno u 4 različita stanja i generalno, n kubita može odjednom biti u $2^n$ različitih stanja.
 
-Skup kubita uzetih zajedno naziva se kvantni registar. (eng.~\emph{quantum register}).
+Skup kubita uzetih zajedno naziva se kvantni registar (eng.~\emph{quantum register}).
 
 \subsubsection{Zapletenost, kombinovanje kubita, kvantni paralelizam}
 \label{entanglement}
@@ -76,9 +76,9 @@ $\alpha^2+\beta^2+\gamma^2+\delta^2=1$.\\
 
 Ovakva distribucija verovatnoća naziva se \textit{pomešano stanje}\cite{qfc}. Svaki posmatrač može imati svoje pomešano (nekompletno) stanje, dok se stvarno stanje kvantnog sistema nalazi u (moguće nepoznatom) \textit{čistom stanju}.
 
-Ovo nam omogućava da, u teoriji, funkcije na kvantnim računarima evaluiramo za više vrednosti \emph{odjednom} tako što vrednosti zadamo u terminima parametara zapletenog sistema. Ovaj efekat, kvantni paralelizam (eng.~\emph{quantum parallelism}) suštinski odvaja kvantno od klasičnog računarstva.
+Ovo nam omogućava da, u teoriji, funkcije na kvantnim računarima evaluiramo za više vrednosti \emph{odjednom} tako što vrednosti zadamo u terminima parametara zapletenog sistema. Ovaj efekat, kvantni paralelizam (eng.~\emph{quantum parallelism}) \cite[Ch. 1.4.2]{knjiga} suštinski odvaja kvantno od klasičnog računarstva.
 
-Nažalost, ovo funkcioniše samo dok je sistem u stanju koherencije  tj dok su superpozicija i spletenost očuvani.
+Nažalost, ovo funkcioniše samo dok je sistem u stanju koherencije  tj dok su superpozicija i zapletenost očuvani. Kada se usled interakcije sistema sa okruženjem ili merenjem superpozicija ''uruši'' u osnovne vrednosti ($\ket{1}$ i $\ket{0}$) gubimo informacije, šta više, samim izvršenjem \emph{merenja} na sistemu dobijamo rezultat za samo jednu vrednost.\cite[Ch. 1.4.2]{knjiga}
 
 \subsubsection {Operacije nad kubitima, kvantne kapije}
 
@@ -105,10 +105,10 @@ i Toffoli kapija (eng.~\emph{Toffoli gate}) (Toffoli je reverzibilna logička ka
 
 Detaljnije informacije o osnovama kvantnog računarstva mogu se naći npr. u \cite{knjiga}
 
-\subsubsection{Kvantno kolo, Kvantni algoritam, Modeli kvantnog računara}
+\subsubsection{Kvantno kolo, kvantni algoritam, modeli kvantnog računara}
 \label{modeli}
 
-Kvantno kolo je sekvenca kvantnih kapija kao osnovnih operacija koje vrše transformacije nad jednim ili više kubita. Samo kvantno kolo predstavlja jednu unitarnu operaciju (kao kombinacija unitarnih operacija/kapija)
+Kvantno kolo je sekvenca kvantnih kapija kao osnovnih operacija koje vrše transformacije nad jednim ili više kubita. Samo kvantno kolo predstavlja jednu unitarnu operaciju (kao kombinacija unitarnih operacija/kapija).
 
 Da bismo kvantno kolo upotrebili za izračunavanje potrebno je sistem na koji je primenjeno najpre inicijalizovati na nek početne vrednosti.
 
@@ -185,12 +185,7 @@ Po \textit{svojstvu nekloniranja} nije moguće duplicirati kvantni bit. U ovom j
 \label{sec:quipper}
 
 Quipper je skalabilni (eng.~\emph{scalable}), ekspresivni, funkcionalni programski jezik višeg nivoa (eng.~ \emph{higher-order}).
-Prvi put predstavljen 2013. godine u \cite{quipper_language}.
-
-\subsubsection{Model}
-
-Quipper kao model kvantnog računara koristi QRAM model kratko opisan u \ref{modeli}, detaljno u \cite{qram_model} 
-
+Prvi put predstavljen 2013. godine u \cite{quipper_language}. Kao model kvantnog računara koristi se QRAM model kratko opisan u \ref{modeli}, detaljno u \cite{qram_model} 
 
 \subsubsection{Odlike jezika}
 
@@ -198,11 +193,15 @@ Prošireni model kola - osim unitarnih kapija/kola quipper obezbeđuje ugrađenu
 
 Pomoćni kubiti (eng.~\emph{ancilliary qubits, ancillas}) - dopunski ulazi koji su potrebni za neke kvantne algoritme (npr. pretpostavlja se da su u stanju $\ket{0}$ pre i posle izvršenja), eksplicitna inicijalizacija i prekid omogućavaju kontrolu opsega (eng.~\emph{scope})
 
-Prekidanje sa potvrdom (eng.~\emph{assertive termination}) - operacija koja ''dealocira'' kubit uz potvrdu da je u stanju $\ket{0}$\\
+Prekidanje sa potvrdom (eng.~\emph{assertive termination}) - operacija koja ''dealocira'' kubit uz potvrdu da je u stanju $\ket{0}$.
 
 Mešana klasično/kvantna kola - klasični bitovi, klasične kapije i klasično kontrolisane kvantne kapije se mogu slobodno kombinovati sa čisto kvantnim kapijama.
 
 \subsubsection{Faze izvršenja}
+
+Iz razloga što je Quipper, između ostalog, jezik za opis kvantnih kola,
+programi pisani u njemu imaju tri jasno odvojene faze izvršenja:
+fazu kompilacije, fazu generisanja kola i fazu izvršenja kola \cite[Section 4.3.1]{quipper_language}.
 
 \textbf{Faza kompilacije}\\
 Izvršava se na klasičnom računaru, rezultat je objektni izvršni kod, ulaz je izvorni kod i parametri koji se zadaju u fazi kompilacije (eng.~\emph{compile time parameters}
@@ -226,9 +225,8 @@ Poseban termin, oblik podataka(eng.~\emph{shape of data}) koristi se za osobine 
 \pagebreak
 \subsubsection{Quipper kao jezik za opis kola}
 
-Proceduralna paradigma jezika pruža podršku za programiranje sa kubitima kao promenljivima i kapijama koje se primenjuju na njih jedna po jedna, uz grupisanje operacija u podprograme. Kvantne operacije su tako, predstavljene kao funkcije koje uzimaju kvantne podatke na ulazu i daju njihovo izmenjeno stanje na izlazu.
-
-Operacije nad kolima su napredni operatori višeg reda koji se primenjuju nad celim kvantnim funkcijama u smislu gornjeg pasusa.
+Quipper je funkcionalni jezik ali dopušta mešanje proceduralnog i deklarativnog programiranja gde osnovna proceduralna paradigma jezika pruža podršku za programiranje sa kubitima kao promenljivima i kapijama koje se primenjuju na njih jedna po jedna, uz grupisanje operacija u podprograme. Kvantne operacije su tako, predstavljene kao funkcije koje uzimaju kvantne podatke na ulazu i daju njihovo izmenjeno stanje na izlazu.
+Funkcionalna paradigma realizovana je kroz operacije nad kolima - napredne operatore višeg reda koji se primenjuju nad celim kvantnim funkcijama.
 
 Na primer, operatori \begin{verbatim} with_control i with_ancilla \end{verbatim} daju podršku za uvođenje promenljivih (kubita) kao kontrolne ili pomoćne strukture za ceo blok kvantnih kapija. Ugrađeni su operatori za obrtanje (eng.~\emph{reversing}), iteracije i transformacije kvantnih funkcija, takođe je podržano automatsko prevođenje klasičnih logičkih procedura u  delove kvantnog algoritma poznate kao ''proročišta'' (eng.~\emph{oracle}) ''crne kutije'' (eng.~\emph{black box}) koje imaju sposobnost provere nekog rešenja.
 
