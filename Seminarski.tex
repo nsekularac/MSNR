@@ -47,26 +47,26 @@ Kvantni efekti, kao što su superpozicija (eng.~\em{superposition}) i kvantna za
 
 \subsection{Osnovni pojmovi kvantnog računarstva}
 
-\subsubsection {Kjubit}
+\subsubsection {Kubit}
 
-Kjubit (eng.~\emph{qubit, quantum bit}) je najmanja jedinica izračunavanja u kvantnom računarstvu.
+Kubit (eng.~\emph{qubit, quantum bit}) je najmanja jedinica izračunavanja u kvantnom računarstvu.
 
-Kjubit je pandan jednom bitu informacija u klasičnom računarstvu, ali dok se jedan bit može naći u 2 diskretna stanja (0, 1),
-kjubit, na osnovu kvantnog principa superpozicije može istovremeno biti u oba.
-Tačnije, stanje kjubita, u odsustvu merenja, može biti bilo koja linearna kombinacija osnovnih stanja.
-Za osnovna stanja (eng. ~\em base states). kjubita se uzimaju ona koja pri merenju prelaze u stanje 0 ili 1 sa verovatnoćom 1 i obeležavaju se sa $\ket{1}$ i $\ket{0}$
+Kubit je pandan jednom bitu informacija u klasičnom računarstvu, ali dok se jedan bit može naći u 2 diskretna stanja (0, 1),
+kubit, na osnovu kvantnog principa superpozicije može istovremeno biti u oba.
+Tačnije, stanje kubita, u odsustvu merenja, može biti bilo koja linearna kombinacija osnovnih stanja.
+Za osnovna stanja (eng. ~\em base states) kubita se uzimaju ona koja pri merenju prelaze u stanje 0 ili 1 sa verovatnoćom 1 i obeležavaju se sa $\ket{1}$ i $\ket{0}$
 
-Formalno, stanje kjubita se zapisuje kao $\alpha \ket{0} + \beta \ket{1}$ gde su $\alpha i \beta$ \em{kompleksni} parametri koji označavaju verovatnoću da se nakon merenja (očitavanja stanja) kjubit nađe u jednom od osnovnih stanja sa verovatnoćama, redom, $\alpha^2$ i $\beta^2$ i važi $\alpha^2+\beta^2=1$
+Formalno, stanje kubita se zapisuje kao $\alpha \ket{0} + \beta \ket{1}$ gde su $\alpha i \beta$ \em{kompleksni} parametri koji označavaju verovatnoću da se nakon merenja (očitavanja stanja) kubit nađe u jednom od osnovnih stanja sa verovatnoćama, redom, $\alpha^2$ i $\beta^2$ i važi $\alpha^2+\beta^2=1$
 
 Ovo svojstvo ima za posledicu da se 2 kubita mogu naći istovremeno u 4 različita stanja i generalno, n kubita može odjednom biti u $2^n$ različitih stanja.
 
-Skup kjubita uzetih zajedno naziva se kvantni registar. (eng.~\emph{quantum register}).
+Skup kubita uzetih zajedno naziva se kvantni registar. (eng.~\emph{quantum register}).
 
-\subsubsection{Zapletenost, kombinovanje kjubita, kvantni paralelizam}
+\subsubsection{Zapletenost, kombinovanje kubita, kvantni paralelizam}
 \label{entanglement}
 
 Efekat kvantne zapletenosti se manifestuje visoko koreliranim stanjima zapletenih čestica nakon merenja.
-To nam omogućava da kombinujemo kjubite na način na koji to nije moguće sa bitovima. Stanje sistema od 2 zapletena kjubita predstavlja se kao linearna kombinacija svih kombinacija osnovnih stanja oba elementa.\\
+To nam omogućava da kombinujemo kubite na način na koji to nije moguće sa bitovima. Stanje sistema od 2 zapletena kubita predstavlja se kao linearna kombinacija svih kombinacija osnovnih stanja oba elementa.\\
 
 $\alpha\ket{00} + \beta\ket{01} + \gamma\ket{10} + \delta\ket{11}$\\
 
@@ -78,9 +78,9 @@ Ovo nam omogućava da, u teoriji, funkcije na kvantnim računarima evaluiramo za
 
 Nažalost, ovo funkcioniše samo dok je sistem u stanju koherencije  tj dok su superpozicija i spletenost očuvani.
 
-\subsubsection {Operacije nad kjubitima, kvantne kapije}
+\subsubsection {Operacije nad kubitima, kvantne kapije}
 
-Zbog očuvanja koherencije sistema i informacija u toku izvršenja, sve operacije nad kjubitima i sistemima kjubita moraju biti reverzibilne (eng.~\emph{reversible}).
+Zbog očuvanja koherencije sistema i informacija u toku izvršenja, sve operacije nad kubitima i sistemima kubita moraju biti reverzibilne (eng.~\emph{reversible}).
 
 Formalno ove operacije predstavljamo unitarnim operatorima nad izabranim prostorom stanja sistema.
 
@@ -93,7 +93,7 @@ $H\equiv\frac{1}{\sqrt{2}}\begin{pmatrix}
 -1&1
 \end{pmatrix}$\\
 \smallskip
-koja radi nad jednim kjubitom na sledeći način:\\
+koja radi nad jednim kubitom na sledeći način:\\
 \smallskip
 $\ket{0} \rightarrow \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$\\
 \smallskip
@@ -106,7 +106,7 @@ Detaljnije informacije o osnovama kvantnog računarstva mogu se naći npr. u \ci
 \subsubsection{Kvantno kolo, Kvantni algoritam, Modeli kvantnog računara}
 \label{modeli}
 
-Kvantno kolo je sekvenca kvantnih kapija kao osnovnih operacija koje vrše transformacije nad jednim ili više kjubita. Samo kvantno kolo predstavlja jednu unitarnu operaciju (kao kombinacija unitarnih operacija/kapija)
+Kvantno kolo je sekvenca kvantnih kapija kao osnovnih operacija koje vrše transformacije nad jednim ili više kubita. Samo kvantno kolo predstavlja jednu unitarnu operaciju (kao kombinacija unitarnih operacija/kapija)
 
 Da bismo kvantno kolo upotrebili za izračunavanje potrebno je sistem na koji je primenjeno najpre inicijalizovati na nek početne vrednosti.
 
@@ -122,17 +122,17 @@ Za potrebe kvantnog računarstva, sisteme predstavljamo različitim idealizovani
 
 Neki od opisanih funkcionalnih jezika (Quipper, ?) rade na modelu kvantne memorije sa nasumičnim pristupom (eng.~\emph{Quantum Random Access Memory, Quantum RAM, QRAM} opisan u \cite{qram_model}
 
-Kvantni računar je zamišljen kao koprocesor povezan sa klasičnim računarom na kome se izvršava kontrola toka. Kvantni uređaj sadrži fiksni unapred određeni broj kjubita i sposoban je da ih individualno adresira. Na kvantnom računaru se izvršavaju samo 2 tipa operacija, unitarne operacije i merenja.  Smatra se da je određen broj osnovnih unitarnih operacija realizovan kroz ugrađenje kvantne kapije i da su one oblika "Primeni ugrađenu operaciju na određene kjubite". Ove operacije vraćaju potvrdu kvantnog računara o izvršenju ali ne i bilo kakvu drugu informaciju.
+Kvantni računar je zamišljen kao koprocesor povezan sa klasičnim računarom na kome se izvršava kontrola toka. Kvantni uređaj sadrži fiksni unapred određeni broj kubita i sposoban je da ih individualno adresira. Na kvantnom računaru se izvršavaju samo 2 tipa operacija, unitarne operacije i merenja.  Smatra se da je određen broj osnovnih unitarnih operacija realizovan kroz ugrađenje kvantne kapije i da su one oblika ''Primeni ugrađenu operaciju na određene kubite''. Ove operacije vraćaju potvrdu kvantnog računara o izvršenju ali ne i bilo kakvu drugu informaciju.
 
-Informacije o rezultatu se dobijaju operacijama merenja, oblika "izmeri kjubit q", ova operacija vraća 0 ili 1 klasičnom računaru sa određenim verovatnoćama.
+Informacije o rezultatu se dobijaju operacijama merenja, oblika ''izmeri kubit q'', ova operacija vraća 0 ili 1 klasičnom računaru sa određenim verovatnoćama.
 
 \subsection{Funkcionalno programiranje}
 \label{sec:funkcionalniprgjezici}
 
 Funkcionalno programiranje je programska paradigma u kojoj je osnovni način izračunavanja primena funkcija na argumente.\cite[p. 3]{funcPro}
 Funkcionalni programski jezici su jezici koji podržavaju i ohrabruju primenu funkcionalne paradigme.
-Tradicionalni programski jezici se baziraju na ideji varijable kao promenljive veze između imena i vrednosti. Ovi jezici se nazivaju 
-imperativni jer se sastoje od niza komandi, koje čine dodele koje menjaju vrednost varijable.
+Tradicionalni programski jezici se baziraju na ideji promenljiva kao promenljive veze između imena i vrednosti. Ovi jezici se nazivaju 
+imperativni jer se sastoje od niza komandi, koje čine dodele koje menjaju vrednost promenljive.
 Funkcionalni jezici se baziraju na strukturiranim pozivima funkcija. Funkcionalni program se sastoji od poziva funkcije koja može da
 poziva druge funkcije:\\
 <function1>(<function2>(<function3> ... ) ... ))\cite[p. 4]{funcPro}
@@ -140,7 +140,7 @@ poziva druge funkcije:\\
 Među najbitnijim konceptima funkcionalnog programiranja su funkcije višeg reda i odsustvo nuspojava. \\
 Funkcije višeg reda su funkcije koje ili mogu za argumente uzeti druge funkcije ili kao svoj rezultat vraćaju funkciju, čime se omogućavaju ugnježdeni pozivi funkcija, odn. pojava koje se zove kompozicija funkcija.\\
 Eliminacija nuspojava podrazumeva otklanjanje svih promena koje ne zavise od pozvane funkcije i njenih argumenata, tako da više poziva jedne funkcije uvek vraća isti rezultat ako su argumenti poziva isti. Eliminacijom nuspojava olakšava se razumevanje programa i formalna 
-verifikacija a redosled izvršavanja postaje nebitan(ref).\par
+verifikacija a redosled izvršavanja postaje nebitan.\par
 Prvi i dugo vremena najpopularniji funkcionalni programski jezik je Lisp (LISt Processor) nastao 1958. pod uticajem lamda računa, ali 
 zadržavajući dodelu vrednosti promenljivoj. Glavna struktura podataka u Lisp-u je povezana lista. Prvi čisti funkcionalni jezik 
 (bez dodele vrednosti promenljivoj) je ISWIM. Još neki bitni f. jezici su Erlang, Haskell, ML, Scala, F\# itd.
@@ -151,21 +151,22 @@ zadržavajući dodelu vrednosti promenljivoj. Glavna struktura podataka u Lisp-u
 \subsection{QFC i QPL}
 \label{sec:qfc_qml}
 
-QFC ( \emph{eng}. Quantum Flow Charts) i QPL ( \emph{eng}. Quantum Programming Language) su dva blisko povezana jezika čiji je tvorac Peter Selinger.  Pristup programiranju u njima se može sumirati na sledeci način: "kvantni podaci, klasična kontrola" \cite[p. 1]{qfc}. Postoje dva načina sintaksnog predstavljanja kvantnih programa: grafička reprezentacija, u vidu grafikona protoka, i tekstualna. Izbor između te dve sintakse je pitanje ukusa, jer su međusobno ekvivalentne. \cite[p. 2]{qfc} Dva osnovna načina manipulacije qubit- ovima: unitarne transformacije i merenja. Klasični kontroler komunicira sa kvantnim uređajem šaljući mu niz instrukcija koje kvantni računar zatim izvršava. 
+QFC ( \emph{eng}. Quantum Flow Charts) i QPL ( \emph{eng}. Quantum Programming Language) su dva blisko povezana jezika čiji je tvorac Peter Selinger.  Pristup programiranju u njima se može sumirati na sledeci način: ''kvantni podaci, klasična kontrola'' \cite[p. 1]{qfc}. Postoje dva načina sintaksnog predstavljanja kvantnih programa: grafička reprezentacija, u vidu grafikona protoka, i tekstualna. Izbor između te dve sintakse je pitanje ukusa, jer su međusobno ekvivalentne. \cite[p. 2]{qfc} Dva osnovna načina manipulacije kubitovima: unitarne transformacije i merenja. Klasični kontroler komunicira sa kvantnim uređajem šaljući mu niz instrukcija koje kvantni računar zatim izvršava. 
 
 Spoljni posmatrač može imati nekompletno znanje o stanju sistema. Na primer, pretpostavimo da znamo da dati sistem može biti u stanju ~\emph{u} i stanju ~\emph{v} sa jednakim verovatnoćama. Koristimo sledeću notaciju da to zabeležimo: \( \frac{1}{2} \){~\emph{u}}+\( \frac{1}{2} \){~\emph{v}}. U opštem slučaju, pišemo $\lambda_1${$u_1$}+$\ldots$+$\lambda_m${$u_m$} da opišemo sistem koji je za nekog posmatrača u stanju $u_i$, sa verovatnoćom $\lambda_i$, gde je zbir svih verovatnoća jednak 1. Takva distribucija verovatnoća naziva se \textit{pomešano stanje}. Svaki posmatrač može imati svoje pomešano stanje, dok se stvarno stanje kvantnog sistema nalazi u (moguće nepoznatom) \textit{čistom stanju}.
 
-Program se predstavlja u obliku grafikona protoka odn. dijagrama kontrole protoka. Komande deluju tako što ulaz transformišu u izlaz. Zarad jednostavnosti razmatramo samo jedan tip podataka: qbit.
+Program se predstavlja u obliku grafikona protoka odn. dijagrama kontrole protoka. Komande deluju tako što ulaz transformišu u izlaz. Zarad jednostavnosti razmatramo samo jedan tip podataka: kubit.
 
-Ako nije drugačije naglašeno, tok podataka se odvija od vrha prema dnu. Svaka grana je označena qbitovima koji su dostupni u tom delu programa dok se u čvorovima odvijaju operacije nad njima. Unitarne transformacije mogu da deluju na jedan ili više qbitova; npr. pišemo \textit{q*=S} za operaciju primene neke kvantne logičke kapije na qbit q. Dakle, notacija je analogna notaciji \textit{b:=1} u klasičnom računarstvu. Operacija merenja je granajuća jer može imati dva moguća izlaza.
+Ako nije drugačije naglašeno, tok podataka se odvija od vrha prema dnu. Svaka grana je označena kubitovima koji su dostupni u tom delu programa dok se u čvorovima odvijaju operacije nad njima. Unitarne transformacije mogu da deluju na jedan ili više kubitova; npr. pišemo \textit{q*=S} za operaciju primene neke kvantne logičke kapije na kubit q. Dakle, notacija je analogna notaciji \textit{b:=1} u klasičnom računarstvu. Operacija merenja je granajuća jer može imati dva moguća izlaza.
 \begin{figure}[H]
-\caption{Primer jednostavnog programa napisanog u QFC}
+\caption{Primer jednostavnog programa napisanog u QFC} \label{fig:qfcPrimer}
 \centering
 \includegraphics[scale=0.75]{qFlow}
+\label{fig:qfcPrimer}
 \end{figure}
-Verovatno najbolje objašnjenje pruža razmotranje jednostavnog primera na slici 1: program prima dva qbita- \textit{p} i \textit{q}, meri p i onda primenjuje logičku kapiju Not na jedan od qbitova u zavisnosti od merenje \textit{p}. Na kraju, na izlazu vraća modifikovane qbitove p i q.
+Verovatno najbolje objašnjenje pruža razmotranje jednostavnog primera na slici 1: program prima dva kubita- \textit{p} i \textit{q}, meri p i onda primenjuje logičku kapiju Not na jedan od kubitova u zavisnosti od merenje \textit{p}. Na kraju, na izlazu vraća modifikovane kubitove p i q.
 
-Primetimo da ako su ulazni qbitovi u čistom stanju, oni će to stanje zadržati posle svake unitarne transformacije i operacije merenja. Trenutak kada se to stanje menja je prilikom spajanja dve grane na dijagramu, tako da na izlazu (u ovom slučaju) dobijamo qbitove u pomešanom stanju. Ali i sam ulaz u program mogu biti qbitovi u pomešanom stanju u kom slučaju se logičke kapije primenjuju na matrice gustine koje predstavljaju pomešana stanja. Dok se čisto stanje može predstaviti u obliku matrice sa jednom kolonom, matrica gustine jednog kubita je dimenzije 2$\times$2. Npr., za qbit \textit{u}=$\frac{1}{\sqrt{2}}\ket{0}$ - $\frac{1}{\sqrt{2}}\ket{0}$ 
+Primetimo da ako su ulazni kubitovi u čistom stanju, oni će to stanje zadržati posle svake unitarne transformacije i operacije merenja. Trenutak kada se to stanje menja je prilikom spajanja dve grane na dijagramu, tako da na izlazu (u ovom slučaju) dobijamo kubitove u pomešanom stanju. Ali i sam ulaz u program mogu biti kubitovi u pomešanom stanju u kom slučaju se logičke kapije primenjuju na matrice gustine koje predstavljaju pomešana stanja. Dok se čisto stanje može predstaviti u obliku matrice sa jednom kolonom, matrica gustine jednog kubita je dimenzije 2$\times$2. Npr., za kubit \textit{u}=$\frac{1}{\sqrt{2}}\ket{0}$ - $\frac{1}{\sqrt{2}}\ket{0}$ 
 matrica gustine je \[\textit{uu*}= \left( \begin{array}{cc}
 \frac{1}{2} & \frac{-1}{2} \\
 \frac{-1}{2} & \frac{1}{2} \\
@@ -177,9 +178,9 @@ QFC podržava petlje (nastaju dodavanjem linije toka kontrole od jedne tačke do
 
 \subsubsection{Implementacioni detalji}
 
-Iako kvantni hardver trenutno ne postoji, korisno je obratiti pažnju na nekoliko hipotetičkih detalja eventualnog hardverskog rešenja. Operativni sistem bi trebao da pamti listu qbitova koje koristi svaki od procesa. Kada proces zatraži novi qbit, operativni sistem nalazi slobodan qbit koji mu dodeljuje. Naravno, operativni sistem mora da vodi računa o tome da proces ne može da pristupi qbitu koji mu nije dodeljen, što veoma liči na upravljanje memorijom na klasičnim računarima. Kada proces završi rad sa nekim qbitom obaveštava o tome operativni sistem koji dati qbit označava kao slobodan.\cite[p. 21]{qfc}
+Iako kvantni hardver trenutno ne postoji, korisno je obratiti pažnju na nekoliko hipotetičkih detalja eventualnog hardverskog rešenja. Operativni sistem bi trebao da pamti listu kubitova koje koristi svaki od procesa. Kada proces zatraži novi kubit, operativni sistem nalazi slobodan kubit koji mu dodeljuje. Naravno, operativni sistem mora da vodi računa o tome da proces ne može da pristupi kubitu koji mu nije dodeljen, što veoma liči na upravljanje memorijom na klasičnim računarima. Kada proces završi rad sa nekim kubitom obaveštava o tome operativni sistem koji dati kubit označava kao slobodan.\cite[p. 21]{qfc}
 
-Po \textit{svojstvu nekloniranja} nije moguće duplicirati kvantni bit. U ovom jeziku, koji je statično tipiziran, ta teorema je ispoštovana u samoj sintaksi, što predstavlja napredak u odnosu na ranije formalizme koji nisu imali to svojstvo, što bi kasnije dovelo do grešaka u radu (npr. prilikom primene unitarne transformacije na više kopija istog qbita).
+Po \textit{svojstvu nekloniranja} nije moguće duplicirati kvantni bit. U ovom jeziku, koji je statično tipiziran, ta teorema je ispoštovana u samoj sintaksi, što predstavlja napredak u odnosu na ranije formalizme koji nisu imali to svojstvo, što bi kasnije dovelo do grešaka u radu (npr. prilikom primene unitarne transformacije na više kopija istog kubita).
 
 \subsection{Quipper}
 \label{sec:quipper}
@@ -196,9 +197,9 @@ Quipper kao model kvantnog računara koristi QRAM model kratko opisan u \ref{mod
 
 Prošireni model kola - osim unitarnih kapija/kola quipper obezbeđuje ugrađenu podršku za eksplicitnu inicijalizaciju i prekid (eng.~\emph{termination}), merenja, klasične bitove, klasične kapije i klasično-kontrolisane kvantne kapije 
 
-Pomoćni kjubiti (eng.~\emph{ancilliary qubits, ancillas}) - dopunski ulazi koji su potrebni za neke kvantne algoritme (npr. pretpostavlja se da su u stanju $\ket{0}$ pre i posle izvršenja), eksplicitna inicijalizacija i prekid omogućavaju kontrolu opsega (eng.~\emph{scope})
+Pomoćni kubiti (eng.~\emph{ancilliary qubits, ancillas}) - dopunski ulazi koji su potrebni za neke kvantne algoritme (npr. pretpostavlja se da su u stanju $\ket{0}$ pre i posle izvršenja), eksplicitna inicijalizacija i prekid omogućavaju kontrolu opsega (eng.~\emph{scope})
 
-Prekidanje sa potvrdom (eng.~\emph{assertive termination}) - operacija koja ''dealocira'' kjubit uz potvrdu da je u stanju $\ket{0}$\\
+Prekidanje sa potvrdom (eng.~\emph{assertive termination}) - operacija koja ''dealocira'' kubit uz potvrdu da je u stanju $\ket{0}$\\
 
 Mešana klasično/kvantna kola - klasični bitovi, klasične kapije i klasično kontrolisane kvantne kapije se mogu slobodno kombinovati sa čisto kvantnim kapijama.
 
@@ -211,26 +212,26 @@ Izvršava se na klasičnom računaru, rezultat je objektni izvršni kod, ulaz je
 Izvršava se na klasičnom računaru u vreme izvršenja koda, ulaz je izvršni kod i parametri kola (eng.~\emph{circuit parameters} (veličine registara, veličine problema, veličina vremenskih koraka, pragovi greške i slično)
 
 \textbf{Faza izvršenja kola}\\
-Izvršava se na kvantnom računaru, ulaz je kvantno kolo generisano u drugoj fazi i ulazni parametri kola (ulazni klasični bitovi (za klasične delove mešanih kola) ili ako fizička implementacija podržava, učitani kjubiti kao ulazi kvantnog kola). Izlaz je izlaz izvršenog kola (klasični bitovi dobijeni merenjem, ako je podržano kjubiti koji treba da budu sačuvani)
+Izvršava se na kvantnom računaru, ulaz je kvantno kolo generisano u drugoj fazi i ulazni parametri kola (ulazni klasični bitovi (za klasične delove mešanih kola) ili ako fizička implementacija podržava, učitani kubiti kao ulazi kvantnog kola). Izlaz je izlaz izvršenog kola (klasični bitovi dobijeni merenjem, ako je podržano kubiti koji treba da budu sačuvani)
 
-Uobičajeni model kvantnog izračunavanja uključuje kombinovanje druge i treće faze, klasični računar snima i obrađuje rezultate izvršenja kola, generiše novo kolo, izvršava ga itd. Quipper takođe podržava opštiji model, da se izlaz jednog kola može koristiti kao parametar za generisanje drugog, pod pretpostavkom da je kvantni deo sistema sposoban da čuva kjubite između izvršenja kola.
+Uobičajeni model kvantnog izračunavanja uključuje kombinovanje druge i treće faze, klasični računar snima i obrađuje rezultate izvršenja kola, generiše novo kolo, izvršava ga itd. Quipper takođe podržava opštiji model, da se izlaz jednog kola može koristiti kao parametar za generisanje drugog, pod pretpostavkom da je kvantni deo sistema sposoban da čuva kubite između izvršenja kola.
 
 \subsubsection{Parametri i ulazi}
 
-Quipper pravi razliku između parametara poznatih pri generisanju kola i parametara poznatih samo pri izvršenju. Ovi poslednji nazivaju se ulazi (eng.~\emph{inputs}). Ova podela je prenesena na tipove u jeziku pa imamo \emph{Bool} - logička promenljiva poznata u fazi generisanja kola i \emph{Bit} - jednobitni logički ulaz u klasično kolo i \emph{Qubit} - 1-kjubitni ulaz u kvantno kolo
+Quipper pravi razliku između parametara poznatih pri generisanju kola i parametara poznatih samo pri izvršenju. Ovi poslednji nazivaju se ulazi (eng.~\emph{inputs}). Ova podela je prenesena na tipove u jeziku pa imamo \emph{Bool} - logička promenljiva poznata u fazi generisanja kola i \emph{Bit} - jednobitni logički ulaz u klasično kolo i \emph{Qubit} - 1-kubitni ulaz u kvantno kolo
 
 Ova razlika se prenosi i na klasične tipove podataka, npr. celobrojne parametre i celobrojne ulaze.
 
-Poseban termin, oblik podataka(eng.~\emph{shape of data}) koristi se za osobine podataka koje se u fazi generisanja kola uzimaju kao parametarske. Na primer, dužina niza je celobrojni parametar koji određuje neku veličinu pri generisanju kola a njegov sadržaj su kjubitni ulazi.
+Poseban termin, oblik podataka(eng.~\emph{shape of data}) koristi se za osobine podataka koje se u fazi generisanja kola uzimaju kao parametarske. Na primer, dužina niza je celobrojni parametar koji određuje neku veličinu pri generisanju kola a njegov sadržaj su kubitni ulazi.
 
 \pagebreak
 \subsubsection{Quipper kao jezik za opis kola}
 
-Proceduralna paradigma jezika pruža podršku za programiranje sa kjubitima kao varijablama i kapijama koje se primenjuju na njih jedna po jedna, uz grupisanje operacija u podprograme. Kvantne operacije su tako, predstavljene kao funkcije koje uzimaju kvantne podatke na ulazu i daju njihovo izmenjeno stanje na izlazu.
+Proceduralna paradigma jezika pruža podršku za programiranje sa kubitima kao promenljivima i kapijama koje se primenjuju na njih jedna po jedna, uz grupisanje operacija u podprograme. Kvantne operacije su tako, predstavljene kao funkcije koje uzimaju kvantne podatke na ulazu i daju njihovo izmenjeno stanje na izlazu.
 
 Operacije nad kolima su napredni operatori višeg reda koji se primenjuju nad celim kvantnim funkcijama u smislu gornjeg pasusa.
 
-Na primer, operatori \begin{verbatim} with_control i with_ancilla \end{verbatim} daju podršku za uvođenje varijabli (kjubita) kao kontrolne ili pomoćne strukture za ceo blok kvantnih kapija. Ugrađeni su operatori za obrtanje (eng.~\emph{reversing}), iteracije i transformacije kvantnih funkcija, takođe je podržano automatsko prevođenje klasičnih logičkih procedura u  delove kvantnog algoritma poznate kao ''proročišta'' (eng.~\emph{oracle}) ''crne kutije'' (eng.~\emph{black box}) koje imaju sposobnost provere nekog rešenja.
+Na primer, operatori \begin{verbatim} with_control i with_ancilla \end{verbatim} daju podršku za uvođenje promenljivih (kubita) kao kontrolne ili pomoćne strukture za ceo blok kvantnih kapija. Ugrađeni su operatori za obrtanje (eng.~\emph{reversing}), iteracije i transformacije kvantnih funkcija, takođe je podržano automatsko prevođenje klasičnih logičkih procedura u  delove kvantnog algoritma poznate kao ''proročišta'' (eng.~\emph{oracle}) ''crne kutije'' (eng.~\emph{black box}) koje imaju sposobnost provere nekog rešenja.
 
 Zbog mogućnosti da kvantna kola u budu ogromna (\cite{quipper_language} navodi 5 \emph{triliona} kvantnih kapija) Quipper omogućava ''pakovanje''(eng.~\emph{boxing}) često korišćenih kola putem \begin{verbatim}
 box
