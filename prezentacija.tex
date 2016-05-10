@@ -15,10 +15,11 @@
 %	PACKAGES AND THEMES
 %----------------------------------------------------------------------------------------
 
-\documentclass{beamer}
+\documentclass[12pt,hyperref={unicode}]{beamer}
 
 \usepackage[utf8x,utf8]{inputenc} % make weird characters work
 \usepackage[serbian]{babel}
+\usepackage{physics}
 
 \mode<presentation> {
 
@@ -117,18 +118,21 @@ Matematički fakultet \\ % Your institution for the title page
 %------------------------------------------------
 
 \subsection{Kvantno računarstvo}% A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
-\subsection{Funkcionalno programiranje}
+
 
 \begin{frame}
 \frametitle{Kvantno računarstvo}
 \begin{itemize}
-\item{Kvantni efekti}
+
+\item{Efekti kvantne mehanike}
 	\begin{itemize}
     \item{superpozicija}\\
-	kubit postoji u oba stanja istovremeno, pre merenja
+	čestica postoji u više stanja istovremeno, pre merenja
     \item{spletenost}\\
-	rezultat merenja jednog kubita determiniše rezultat merenja drugog kubita, bez obzira na njihovu udaljenost
+	rezultat merenja jedne čestice determiniše rezultat merenja druge čestice, bez obzira na njihovu udaljenost
     \end{itemize}
+\item{Kvantni računar je koji u svom radu direktno koristi efekte kvantne mehanike za operacije nad podacima}
+\item{Kvantni efekti su osnovni resursi kvantnog računarstva}
 \end{itemize}
 
 \end{frame}
@@ -138,11 +142,24 @@ Matematički fakultet \\ % Your institution for the title page
 \begin{frame}
 \frametitle{Kvantno računarstvo}
 \begin{itemize}
-\item 
+\item{Kubit}
+\begin{itemize}
+    \item{najmanja jedinica izračunavanja u kvantnom računarstvu}\\
+    \item{osnovna stanja, $\ket{1}$ i $\ket{0}$.}\\
+    \end{itemize}
+\item{Kvantni registar - skup kubita}
+\item{Kvantne kapije}
+\begin{itemize}
+    \item{osnovne operacije nad kubitima}
+    \item{reverzibilne operacije predstavljene unitarnim operatorima}
+    \end{itemize}
+\item{Kvantno kolo - sekvenca kvantnih kapija}
+\item{}
 \end{itemize}
 \end{frame}
 
-%------------------------------------------------
+\subsection{Funkcionalno programiranje}
+%---------------------------------------------
 
 \begin{frame}
 \frametitle{Funkcionalno programiranje}
@@ -181,12 +198,32 @@ Matematički fakultet \\ % Your institution for the title page
 \end{frame}
 
 %------------------------------------------------
+\section{Quipper}
+%------------------------------------------------
 
 \begin{frame}
 \frametitle{Quipper}
-
+\begin{itemize}
+\item{Skalabilni, funkcionalni jezik višeg nivoa za kvantno programiranje \cite{p3}}
+\item{Kao model kvantnog računara koristi se kvantna memorija sa nasumičnim pristupom (eng.~\emph{Quantum Random Access Memory, Quantum RAM, QRAM}})
+\item{Implementiran kao ugnežden jezik u Haskellu}
+\item{Ugrađen simulator kvantnog računara}
+\item{Uključena biblioteka aktuelnih kvantnih algoritama}
+\end{itemize}
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Quipper, osobine jezika}
+\begin{itemize}
+\item{Jezik za opis kvantnih kola sa podrškom za pomešano proceduralno i deklarativno programiranje}
+\item{Kubiti kao promenljive, kapije kao funkcije, operacije višeg nivoa nad celim funkcijama}
+\item{Mešana klasično/kvantna kola, kontrolisano uvođenje i dealokacija dodatnih i kontrolnih promenljivih}
+\item{Tri faze izvršenja: kompilacija, generisanje kola, izvršenje kola}
+\end{itemize}
 \end{frame}
 
+%------------------------------------------------
+\section{Reference}
 %------------------------------------------------
 
 \begin{frame}
@@ -195,6 +232,12 @@ Matematički fakultet \\ % Your institution for the title page
 \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
 \bibitem[Selinger, 2004]{p1} Peter Selinger (2004)
 \newblock Towards a Quantum Programming Language
+\setbeamertemplate{bibliography item}[book]
+\bibitem{p2} Nielsen, Michael A. and Chuang, Isaac L. (2010)
+\setbeamertemplate{bibliography item}[article]
+\newblock Quantum Computation and Quantum Information: 10th Anniversary Edition
+\bibitem{p3} Alexander S. Green and Peter LeFanu Lumsdaine and Neil J. Ross and Peter Selinger and Benoît Valiron (2013)
+\newblock Quipper: A Scalable Quantum Programming Language
 
 \end{thebibliography}
 }
