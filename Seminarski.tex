@@ -66,11 +66,15 @@ Ovo svojstvo ima za posledicu da se 2 kubita mogu naći istovremeno u 4 različi
 Efekat kvantne zapletenosti se manifestuje visoko koreliranim stanjima zapletenih čestica nakon merenja.
 To nam omogućava da kombinujemo kubite na način na koji to nije moguće sa bitovima. Stanje sistema od 2 zapletena kubita predstavlja se kao linearna kombinacija svih kombinacija osnovnih stanja oba elementa.\\
 
-$\alpha\ket{00} + \beta\ket{01} + \gamma\ket{10} + \delta\ket{11}$\\
+\begin{equation*}
+\alpha\ket{00} + \beta\ket{01} + \gamma\ket{10} + \delta\ket{11}
+\end{equation*}\\
 
 pri čemu su $\alpha^2, \beta^2, \gamma^2, \delta^2,$ redom verovatnoće da će se sistem naći u odgovarajućoj kombinaciji osnovnih stanja gde i dalje važi\\
 
-$\alpha^2+\beta^2+\gamma^2+\delta^2=1$.\\
+\begin{equation*}
+\alpha^2+\beta^2+\gamma^2+\delta^2=1.\\
+\end{equation*}\\
 
 Ovakva distribucija verovatnoća naziva se \textit{pomešano stanje}\cite{qfc}. Svaki posmatrač može imati svoje pomešano (nekompletno) stanje, dok se stvarno stanje kvantnog sistema nalazi u (moguće nepoznatom) \textit{čistom stanju}.
 
@@ -88,20 +92,27 @@ Kvantna logička kapija (eng. ~\emph{quantum logic gate}) je kvantni pandan logi
 
 Posebno su nam, kao i u klasičnom računarstvu, zanimljive male kvantne logičke kapije koje mogu da svojom kombinacijom predstavljaju druge operacije ( ili da ih barem proizvoljno približno aproksimiraju sa konačnim brojem osnovnih kapija). Jedan takav \emph{univerzalni set kapija} su na primer Hadamardova kapija (eng~\emph{Hadamard gate})\\
 \smallskip
-$H\equiv\frac{1}{\sqrt{2}}\begin{pmatrix}
+\begin{equation*}
+H\equiv\frac{1}{\sqrt{2}}\begin{pmatrix}
 1&1\\
 -1&1
-\end{pmatrix}$ \cite[Ch. 1.3.1]{knjiga}\\
+\end{pmatrix}\\
+\end{equation*}
+
 \smallskip
 koja radi nad jednim kubitom na sledeći način:\\
 \smallskip
-$\ket{0} \rightarrow \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$\\
+\begin{equation*}
+\ket{0} \rightarrow \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})
+\end{equation*}
 \smallskip
-$\ket{1} \rightarrow \frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$\\
+\begin{equation*}
+\ket{1} \rightarrow \frac{1}{\sqrt{2}}(\ket{0} - \ket{1})\\
+\end{equation*}
 
 i Toffoli kapija (eng.~\emph{Toffoli gate}) (Toffoli je reverzibilna logička kapija u klasičnom računarstvu i može se predstaviti u kvantnom obliku).
 
-Detaljnije informacije o osnovama kvantnog računarstva mogu se naći npr. u \cite{knjiga}
+Detaljnije informacije o osnovama kvantnog računarstva mogu se naći u \cite{knjiga}.
 
 \subsubsection{Kvantno kolo, kvantni algoritam, modeli kvantnog računara}
 \label{modeli}
