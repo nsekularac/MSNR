@@ -98,7 +98,7 @@ Matematički fakultet \\ % Your institution for the title page
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Kvantno računarstvo}
+\frametitle{Kvantno računarstvo - osnovni pojmovi}
 \begin{itemize}
 \item{Kubit}
 \begin{itemize}
@@ -112,8 +112,24 @@ Matematički fakultet \\ % Your institution for the title page
     \item{reverzibilne operacije predstavljene unitarnim operatorima}
     \end{itemize}
 \item{Kvantno kolo - sekvenca kvantnih kapija}
-\item{}
+\item{Svi navedeni pojmovi imaju svoje pandane u klasičnom računarstvu}
 \end{itemize}
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Kvantno računarstvo - posebnosti}
+\begin{itemize}
+\item{Kvantni paralelizam \cite[Ch.1.4.2]{p2}}
+\begin{itemize}
+    \item{Počiva na kvantnim efektima superpozicije i zapletenosti}\\
+    \item{Mogućnost evaluacije funkcija za više vrednosti istovremeno}\\
+    \item{Eksponencijalno efikasnije od klasičnog računara ali samo za određene probleme}
+    \item{Kvantna furijeova transformacija, kvantna pretraga, kvantna simulacija \cite[Ch.1.4.5]{p2}}
+	    \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \subsection{Funkcionalno programiranje}
@@ -166,7 +182,7 @@ Matematički fakultet \\ % Your institution for the title page
 \item{Kao model kvantnog računara koristi se kvantna memorija sa nasumičnim pristupom (eng.~\emph{Quantum Random Access Memory, Quantum RAM, QRAM}})
 \item{Implementiran kao ugnežden jezik u Haskellu}
 \item{Ugrađen simulator kvantnog računara}
-\item{Uključena biblioteka aktuelnih kvantnih algoritama}
+\item{Uključena biblioteka realizovanih kvantnih algoritama}
 \end{itemize}
 \end{frame}
 %------------------------------------------------
@@ -175,6 +191,7 @@ Matematički fakultet \\ % Your institution for the title page
 \begin{itemize}
 \item{Jezik za opis kvantnih kola sa podrškom za pomešano proceduralno i deklarativno programiranje}
 \item{Kubiti kao promenljive, kapije kao funkcije, operacije višeg nivoa nad celim funkcijama}
+\item{Klasični i kvantni tipovi}
 \item{Mešana klasično/kvantna kola, kontrolisano uvođenje i dealokacija dodatnih i kontrolnih promenljivih}
 \item{Tri faze izvršenja: kompilacija, generisanje kola, izvršenje kola}
 \end{itemize}
@@ -192,8 +209,8 @@ Matematički fakultet \\ % Your institution for the title page
 \newblock Towards a Quantum Programming Language
 \setbeamertemplate{bibliography item}[book]
 \bibitem{p2} Nielsen, Michael A. and Chuang, Isaac L. (2010)
-\setbeamertemplate{bibliography item}[article]
 \newblock Quantum Computation and Quantum Information: 10th Anniversary Edition
+\setbeamertemplate{bibliography item}[article]
 \bibitem{p3} Alexander S. Green and Peter LeFanu Lumsdaine and Neil J. Ross and Peter Selinger and Benoît Valiron (2013)
 \newblock Quipper: A Scalable Quantum Programming Language
 \bibitem[Michaelson, 2011]{p4} Greg Michaelson (2011)
