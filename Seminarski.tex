@@ -108,23 +108,15 @@ Detaljnije informacije o osnovama kvantnog računarstva mogu se naći npr. u \ci
 
 Kvantno kolo je sekvenca kvantnih kapija kao osnovnih operacija koje vrše transformacije nad jednim ili više kubita. Samo kvantno kolo predstavlja jednu unitarnu operaciju (kao kombinacija unitarnih operacija/kapija).
 
-Da bismo kvantno kolo upotrebili za izračunavanje potrebno je sistem na koji je primenjeno najpre inicijalizovati na nek početne vrednosti.
-
-Da bi smo rezultat izračunavanja vratili u klasični računar potrebno nam je merenje. U kvantnoj mehanici merenje je nereverzibilna, destruktivna operacija koja sistem dovodi u stanje dekoherencije.
-
-Takođe merenje je probabilistička operacija (kvantni računari dele osobine sa probabilističkim i nedeterminističkim računarima i rešenje daju samo sa određenom tačnošću).
+Da bismo kvantno kolo upotrebili za izračunavanje potrebno je sistem na koji je primenjeno najpre inicijalizovati na nek početne vrednosti a da rezultat izračunavanja vratimo u klasični računar potrebno nam je merenje. U kvantnoj mehanici merenje je nereverzibilna, destruktivna operacija koja sistem dovodi u stanje dekoherencije. Takođe merenje je probabilistička operacija (kvantni računari dele osobine sa probabilističkim i nedeterminističkim računarima i rešenje daju samo sa određenom tačnošću).
 
 To dovodi do toga da je opšti upotrebljivi kvantni algoritam niz uzastopnih inicijalizacija, primenjenih kvantnih kola i merenja sa dodatim klasičnim operacijama (npr provere rezultata ili kontrole toka).
 
-Praktična konstrukcija kvantnog računara je još uvek u domenu laboratorijskih eksperimenata uz tek poneki komercijalni pokušaj.
+Praktična konstrukcija kvantnog računara je još uvek u domenu laboratorijskih eksperimenata uz tek poneki komercijalni pokušaj i za potrebe kvantnog računarstva, sisteme predstavljamo različitim idealizovanim modelima kao što su npr kvantna Turingova mašina (eng.~\emph{quantum Turing machine, QTM}) ili kvantno kolo (eng. ~\emph{quantum circuit}) dok zanemarujemo prisustvo greške i efekte smetnji (eng.~\emph{interference}) i dekoherencije koji su realnost kvantnih računara.
 
-Za potrebe kvantnog računarstva, sisteme predstavljamo različitim idealizovanim modelima kao što su npr kvantna Turingova mašina (eng.~\emph{quantum Turing machine, QTM}) ili kvantno kolo (eng. ~\emph{quantum circuit}) dok zanemarujemo prisustvo greške i efekte smetnji (eng.~\emph{interference}) i dekoherencije koji su realnost kvantnih računara.
+Neki od opisanih funkcionalnih jezika (Quipper,QFC) rade na modelu kvantne memorije sa nasumičnim pristupom (eng.~\emph{Quantum Random Access Memory, Quantum RAM, QRAM} opisan u \cite{qram_model}.
 
-Neki od opisanih funkcionalnih jezika (Quipper, ?) rade na modelu kvantne memorije sa nasumičnim pristupom (eng.~\emph{Quantum Random Access Memory, Quantum RAM, QRAM} opisan u \cite{qram_model}.
-
-Kvantni računar je zamišljen kao koprocesor povezan sa klasičnim računarom na kome se izvršava kontrola toka. Kvantni uređaj sadrži fiksni unapred određeni broj kubita i sposoban je da ih individualno adresira. Na kvantnom računaru se izvršavaju samo 2 tipa operacija, unitarne operacije i merenja.  Smatra se da je određen broj osnovnih unitarnih operacija realizovan kroz ugrađenje kvantne kapije i da su one oblika ''Primeni ugrađenu operaciju na određene kubite''. Ove operacije vraćaju potvrdu kvantnog računara o izvršenju ali ne i bilo kakvu drugu informaciju.
-
-Informacije o rezultatu se dobijaju operacijama merenja, oblika ''izmeri kubit q'', ova operacija vraća 0 ili 1 klasičnom računaru sa određenim verovatnoćama.
+Kvantni računar je zamišljen kao koprocesor povezan sa klasičnim računarom na kome se izvršava kontrola toka. Kvantni uređaj sadrži fiksni unapred određeni broj kubita i sposoban je da ih individualno adresira. Na kvantnom računaru se izvršavaju samo 2 tipa operacija, unitarne operacije i merenja.  Smatra se da je određen broj osnovnih unitarnih operacija realizovan kroz ugrađenje kvantne kapije i da su one oblika ''Primeni ugrađenu operaciju na određene kubite''. Ove operacije vraćaju potvrdu kvantnog računara o izvršenju ali ne i bilo kakvu drugu informaciju. Informacije o rezultatu se dobijaju operacijama merenja, oblika ''izmeri kubit q'', ova operacija vraća 0 ili 1 klasičnom računaru sa određenim verovatnoćama.
 
 \subsection{Funkcionalno programiranje}
 \label{sec:funkcionalniprgjezici}
